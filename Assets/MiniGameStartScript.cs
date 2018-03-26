@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MiniGameStartScript : MonoBehaviour
@@ -22,13 +23,14 @@ public class MiniGameStartScript : MonoBehaviour
 		Button btn = mgStart1.GetComponent<Button> ();
 		Button btn2 = mgStart2.GetComponent<Button> ();
 		Button btn3 = mgStart3.GetComponent<Button> ();
-		
-		btn.onClick.AddListener(TaskOnClick);	
-		btn2.onClick.AddListener(TaskOnClick);
-		btn3.onClick.AddListener(TaskOnClick);
+
+		btn.onClick.AddListener(delegate {TaskOnClick(1);});	
+		btn2.onClick.AddListener(delegate {TaskOnClick(2);});
+		btn3.onClick.AddListener(delegate {TaskOnClick(3);});
 	}
 
-	void TaskOnClick (){
-		img.enabled = true;
+	void TaskOnClick (int level){
+//		img.enabled = true;
+		SceneManager.LoadScene(level);
 	}
 }
