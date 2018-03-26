@@ -17,12 +17,14 @@ public class MenuSelection : MonoBehaviour
 	public GameObject response;
 
 	public GameObject player;
+	public GameObject pointsText;
 
 	public bool yes = false;
 	public bool no = false;
 	
 	private float timeAdd = 3f;
 	private bool swapped = false;
+	private int pointsCount = 0;
 	
 	void Start () 
 	{
@@ -68,13 +70,16 @@ public class MenuSelection : MonoBehaviour
 		}
 
 		
-		if (yes == true && Input.GetKeyUp(KeyCode.Space) && player.GetComponent<Timer>().timeUp == false && player.GetComponent<Timer>().timeLeft > 0)
+		if (yes == true && Input.GetKeyUp(KeyCode.Space) || player.GetComponent<Timer>().timeUp == true)
 		{
 			option1.GetComponent<Renderer>().enabled = false;
 			option2.GetComponent<Renderer>().enabled = false;
 			text1.SetActive(false);
 			text2.SetActive(false);
-			answer.GetComponent<TextMesh>().text = "Yes.";
+			if (player.GetComponent<Timer>().timeUp == false)
+			{
+				answer.GetComponent<TextMesh>().text = "Yes.";
+			}
 			response.GetComponent<TextMesh>().text = "Haha fuck you.";
 			player.GetComponent<Timer>().timeLeft = 0;
 			player.GetComponent<Timer>().timeDisplay.GetComponent<TextMesh>().text = "You failed!";
@@ -97,6 +102,8 @@ public class MenuSelection : MonoBehaviour
 			response.GetComponent<TextMesh>().characterSize += .01f;
 			player.GetComponent<Timer>().timeDisplay.GetComponent<TextMesh>().text = "You did it!";
 			player.GetComponent<Timer>().timeLeft += timeAdd;
+			pointsCount++;
+			pointsText.GetComponent<TextMesh>().text = "Points: " + pointsCount;
 			if (timeAdd > .5f)
 			{
 				timeAdd -= .5f;
