@@ -13,6 +13,7 @@
             </e>
           </e>
         </e>
+        <e p="tutorialGo.cs" t="Include" />
       </e>
       <e p="Final_Project.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
