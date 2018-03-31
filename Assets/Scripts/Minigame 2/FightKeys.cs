@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using NUnit.Framework.Internal.Execution;
 using UnityEngine;
 
-public class FightKeys : MonoBehaviour {
+public class FightKeys : MonoBehaviour //fighting mini game main script
+{
 	
 	private KeyCode[] keyChain = new KeyCode[4];
 	private int count = 0;
+	public GameObject timer;
 	
 	// Use this for initialization
 	void Start ()
@@ -28,16 +30,17 @@ public class FightKeys : MonoBehaviour {
 		this.GetComponent<TextMesh>().text = textChain;
 	}
 	
-	// Update is called once per frame
+	// 
 	void Update ()
 	{
 
-		if (count < 4)
+		if (count < 4 && timer.GetComponent<Timer2>().timeUp == false)
 		{
 			if (Input.GetKeyUp(keyChain[count]))
 			{
 				count++;
-			} else if (Input.anyKey && !Input.GetKey(keyChain[count]))
+			} 
+			else if (Input.anyKey && !Input.GetKey(keyChain[count]) || timer.GetComponent<Timer2>().timeUp == true)
 			{
 				this.GetComponent<TextMesh>().text = "You Lose!";
 			}
@@ -45,6 +48,7 @@ public class FightKeys : MonoBehaviour {
 		else
 		{
 			this.GetComponent<TextMesh>().text = "You Win!";
+			timer.GetComponent<Timer2>().subTime = false;
 		}
 		
 		Debug.Log(keyChain[0] + "" + keyChain[1] + "" + keyChain[2] + "" + keyChain[3]);

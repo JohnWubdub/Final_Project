@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MiniGameStartScript : MonoBehaviour
+public class MiniGameStartScript : MonoBehaviour //Menu script used to select the minigame they want to play
 {
 	
 	public Button mgStart1;
