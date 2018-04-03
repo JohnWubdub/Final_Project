@@ -3,129 +3,129 @@ using System.Collections.Generic;
 //using System.Management.Instrumentation;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.WSA;
 
-public class MenuSelection : MonoBehaviour
+public class MenuSelection : MonoBehaviour //main script for first minigame interaction
 {
+	
+	public GameObject[] options;
 
-
-	public GameObject option1;
-	public GameObject option2;
-	public GameObject text1;
-	public GameObject text2;
+	public GameObject[] text;
 
 	public GameObject answer;
 	public GameObject response;
+	public GameObject timer;
 
-	public GameObject player;
-	public GameObject pointsText;
+	public bool first = false;
+	public bool second = false;
+	public bool wrong = false;
 
-	public bool yes = false;
-	public bool no = false;
+	public int current = 0;
 	
-	private float timeAdd = 3f;
-	private bool swapped = false;
-	private int pointsCount = 0;
-	
-	void Start () 
-	{
-		
-	}
-	
+	private bool check = false;
+	private bool check2 = false;
 
 	void Update () 
 	{
+		cursor();
+		winLose();
+		Debug.Log("current = " + current);
+	}
+
+
+	
+	
+	void cursor()
+	{
 		
-		if (Input.GetKey(KeyCode.W) == true && player.GetComponent<Timer>().timeUp == false)
+		if (Input.GetKeyUp(KeyCode.W) == true && timer.GetComponent<Timer>().timeUp == false) //scrolling through the options (going up)
 		{
-			option1.GetComponent<Renderer>().enabled = true;
-			option2.GetComponent<Renderer>().enabled = false;
-//			Debug.Log("fuck me");
-			if (swapped == false)
-			{
-				yes = true;
-				no = false;
-			}
-			else
-			{
-				yes = false;
-				no = true;
-			}
+			current -= 1;
 		}
 		
-		if (Input.GetKey(KeyCode.S) == true && player.GetComponent<Timer>().timeUp == false)
+		if (Input.GetKeyUp(KeyCode.S) == true && timer.GetComponent<Timer>().timeUp == false) //scrolling through the options (going down)
 		{
-			option1.GetComponent<Renderer>().enabled = false;
-			option2.GetComponent<Renderer>().enabled = true;
-//			Debug.Log("fuck you");
-			if (swapped == false)
+			current += 1;
+		}
+		
+		options[current].GetComponent<Renderer>().enabled = true;
+
+
+		if (((current + 1) < 6))
+		{
+			if (options[current + 1].GetComponent<Renderer>().enabled == true) //checks
 			{
-				yes = false;
-				no = true;
+				options[current + 1].GetComponent<Renderer>().enabled = false;
 			}
-			else
+		}
+
+		if ((current - 1) > -1)
+		{
+			if (options[current - 1].GetComponent<Renderer>().enabled == true) //and balances
 			{
-				yes = true;
-				no = false;
+				options[current - 1].GetComponent<Renderer>().enabled = false;
 			}
 		}
 
 		
-		if (yes == true && Input.GetKeyUp(KeyCode.Space) || player.GetComponent<Timer>().timeUp == true)
+
+	}
+
+
+
+	void winLose()
+	{
+		if (current == 3 && Input.GetKeyUp(KeyCode.Space)) //if right the first time
 		{
-			option1.GetComponent<Renderer>().enabled = false;
-			option2.GetComponent<Renderer>().enabled = false;
-			text1.SetActive(false);
-			text2.SetActive(false);
-			if (player.GetComponent<Timer>().timeUp == false)
+			first = true;
+		}
+
+		if (first == true)
+		{
+			text[0].GetComponent<TextMesh>().text = "No";
+			text[1].GetComponent<TextMesh>().text = "Yes";
+			text[2].GetComponent<TextMesh>().text = "Fuck you";
+			text[3].GetComponent<TextMesh>().text = "I will kill you";
+			text[4].GetComponent<TextMesh>().text = "Fuck off";
+			text[5].GetComponent<TextMesh>().text = "I hate you";
+		}
+
+		if (current == 0 && Input.GetKeyUp(KeyCode.Space) && first == true) //if right again
+		{
+			second = true;
+		}
+
+		if (first == true && second == true) //winning
+		{
+			for (int i = 0; i < 6; i++)
 			{
-				answer.GetComponent<TextMesh>().text = "Yes.";
+				options[i].GetComponent<Renderer>().enabled = false;
+				text[i].GetComponent<TextMesh>().text = " ";
 			}
-			response.GetComponent<TextMesh>().text = "Haha fuck you.";
-			player.GetComponent<Timer>().timeLeft = 0;
-			player.GetComponent<Timer>().timeDisplay.GetComponent<TextMesh>().text = "You failed!";
+			answer.GetComponent<TextMesh>().text = "No";
+			timer.GetComponent<Timer>().subTime = false;
+			response.GetComponent<TextMesh>().text = "   ";
 		}
 		
-		if (no == true && Input.GetKeyUp(KeyCode.Space) && player.GetComponent<Timer>().timeUp == false && player.GetComponent<Timer>().timeLeft > 0)
+		
+		if ((current != 3 && Input.GetKeyUp(KeyCode.Space) && first == false) ||
+		    (current != 0 && Input.GetKeyDown(KeyCode.Space) && first == true) ||
+		    (timer.GetComponent<Timer>().timeUp == true)) //failure
 		{
-			float red = Random.Range(0, 1f);
-			float green = Random.Range(0, 1f);
-			float blue = Random.Range(0, 1f);
-			int changeOptions = Random.Range(0, 2);
-			
-//			option1.GetComponent<Renderer>().enabled = false;
-//			option2.GetComponent<Renderer>().enabled = false;
-//			text1.SetActive(false);
-//			text2.SetActive(false);
-			answer.GetComponent<TextMesh>().text = "No.";
-			answer.GetComponent<TextMesh>().color = new Color(red, green, blue);
-			response.GetComponent<TextMesh>().text = "Please?";
-			response.GetComponent<TextMesh>().characterSize += .01f;
-			player.GetComponent<Timer>().timeDisplay.GetComponent<TextMesh>().text = "You did it!";
-			player.GetComponent<Timer>().timeLeft += timeAdd;
-			pointsCount++;
-			pointsText.GetComponent<TextMesh>().text = "Points: " + pointsCount;
-			if (timeAdd > .5f)
-			{
-				timeAdd -= .5f;
-			}
+			wrong = true;
+		}
 
-			if (changeOptions == 0)
+		if (wrong == true) //losing
+		{
+			for (int i = 0; i < 6; i++)
 			{
-				text1.GetComponent<TextMesh>().text = "Yes";
-				text2.GetComponent<TextMesh>().text = "No";
-				swapped = false;
+				options[i].GetComponent<Renderer>().enabled = false;
+				text[i].GetComponent<TextMesh>().text = " ";
 			}
-			else
-			{
-				text1.GetComponent<TextMesh>().text = "No";
-				text2.GetComponent<TextMesh>().text = "Yes";
-				swapped = true;
-			}
-			
-			option1.GetComponent<Renderer>().enabled = true;
-			option2.GetComponent<Renderer>().enabled = true;
-			yes = false;
-			no = false;
+			timer.GetComponent<TextMesh>().text = "You fucking failed";
+			timer.GetComponent<Timer>().subTime = false;
+
+			response.GetComponent<TextMesh>().text = "I fucking hate you";
 		}
 	}
 }
