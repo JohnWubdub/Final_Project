@@ -13,7 +13,7 @@ public class Hiccups : MonoBehaviour
 	
 	void Start ()
 	{
-		hiccupNum = Random.RandomRange(80, 84);
+		hiccupNum = Random.Range(80, 84);
 	}
 	
 
