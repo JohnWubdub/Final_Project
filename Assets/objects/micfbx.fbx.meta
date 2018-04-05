@@ -1,36 +1,21 @@
 fileFormatVersion: 2
-guid: 37e8229aa9cbf4bccb150f7465f6adee
-timeCreated: 1522880598
+guid: 161f4e458b3784db8975f721d792e4ad
+timeCreated: 1522901849
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: joint1
-    100002: joint2
-    100004: joint3
-    100006: joint4
-    100008: joint5
-    100010: joint6
-    100012: joint7
-    100014: joint8
-    100016: joint9
-    100018: pCylinder9
-    100020: //RootNode
-    400000: joint1
-    400002: joint2
-    400004: joint3
-    400006: joint4
-    400008: joint5
-    400010: joint6
-    400012: joint7
-    400014: joint8
-    400016: joint9
-    400018: pCylinder9
-    400020: //RootNode
-    2100000: lambert1
-    2300000: pCylinder9
-    3300000: pCylinder9
-    4300000: pCylinder9
+    100000: //RootNode
+    400000: //RootNode
+    2100000: silver
+    2100002: darkgrey
+    2100004: lambert1
+    2100006: black
+    2100008: dirtyyellow
+    2100010: red
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pSphere4
     9500000: //RootNode
   externalObjects: {}
   materials:

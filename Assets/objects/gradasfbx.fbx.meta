@@ -1,21 +1,17 @@
 fileFormatVersion: 2
-guid: 892cb876951554ca38990779f62532ae
-timeCreated: 1522880586
+guid: 2f6417c48e20247f893583fb40ebd6e1
+timeCreated: 1522901849
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: silver
-    2100002: darkgrey
-    2100004: lambert1
-    2100006: black
-    2100008: dirtyyellow
-    2100010: red
+    2100000: darkgrey
+    2100002: white
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pSphere4
+    4300000: pCube17
     9500000: //RootNode
   externalObjects: {}
   materials:
