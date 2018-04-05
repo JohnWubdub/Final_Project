@@ -1,70 +1,21 @@
 fileFormatVersion: 2
-guid: 494c8f508c10a4a7ca813de2214323a6
-timeCreated: 1522901850
+guid: 15c4e3fda16854e9391e41eab3148580
+timeCreated: 1522944212
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube10
-    100004: pCube11
-    100006: pCylinder13
-    100008: pCylinder25
-    100010: pCylinder28
-    100012: pCylinder29
-    100014: pCylinder32
-    100016: pCylinder33
-    100018: pCylinder36
-    100020: pCylinder37
-    100022: pSphere11
-    100024: pSphere12
-    100026: pSphere8
-    100028: transform10
-    100030: transform11
-    100032: transform12
-    100034: transform13
-    100036: transform14
-    100038: transform15
-    100040: transform4
-    100042: transform5
-    100044: transform6
-    100046: transform7
-    100048: transform8
-    100050: transform9
     400000: //RootNode
-    400002: pCube10
-    400004: pCube11
-    400006: pCylinder13
-    400008: pCylinder25
-    400010: pCylinder28
-    400012: pCylinder29
-    400014: pCylinder32
-    400016: pCylinder33
-    400018: pCylinder36
-    400020: pCylinder37
-    400022: pSphere11
-    400024: pSphere12
-    400026: pSphere8
-    400028: transform10
-    400030: transform11
-    400032: transform12
-    400034: transform13
-    400036: transform14
-    400038: transform15
-    400040: transform4
-    400042: transform5
-    400044: transform6
-    400046: transform7
-    400048: transform8
-    400050: transform9
     2100000: hairbrown
     2100002: skin
-    2100004: white
-    2100006: blu
-    2100008: brown
-    2100010: black
-    2300000: pSphere12
-    3300000: pSphere12
+    2100004: face
+    2100006: white
+    2100008: blu
+    2100010: brown
+    2100012: black
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: pSphere12
     9500000: //RootNode
   externalObjects: {}
