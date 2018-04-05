@@ -34,6 +34,11 @@ public class PressInq : MonoBehaviour
 	void Update ()
 	{
 		int i = 0;
+
+		for (int k = 0; k < 7; k++)
+		{
+			Debug.Log(keyChain[k]);
+		}
 		
 		if (keyChain[i] == keyLetters[0]) //if it's A (the left side)
 		{
