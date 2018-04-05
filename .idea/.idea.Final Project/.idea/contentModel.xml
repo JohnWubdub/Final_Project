@@ -26,6 +26,10 @@
             <e p="Hiccups.cs" t="Include" />
             <e p="Timer3.cs" t="Include" />
           </e>
+          <e p="Minigame 4" t="Include">
+            <e p="PressInq.cs" t="Include" />
+            <e p="Timer4.cs" t="Include" />
+          </e>
           <e p="MiniGameStartScript.cs" t="Include" />
           <e p="tutorialGo.cs" t="Include" />
         </e>
