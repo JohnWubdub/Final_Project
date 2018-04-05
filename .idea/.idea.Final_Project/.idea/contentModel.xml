@@ -14,6 +14,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Global.cs" t="Include" />
           <e p="Minigame 1" t="Include">
             <e p="MenuSelection.cs" t="Include" />
             <e p="Timer.cs" t="Include" />
@@ -31,6 +32,7 @@
             <e p="Timer4.cs" t="Include" />
           </e>
           <e p="MiniGameStartScript.cs" t="Include" />
+          <e p="SingletonHelper.cs" t="Include" />
           <e p="tutorialGo.cs" t="Include" />
         </e>
       </e>
