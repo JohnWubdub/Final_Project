@@ -1,22 +1,18 @@
 fileFormatVersion: 2
-guid: 15c4e3fda16854e9391e41eab3148580
-timeCreated: 1522944212
+guid: cb4f6d41b31214788985f698e94d6f07
+timeCreated: 1523245572
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: hairbrown
-    2100002: skin
-    2100004: face
-    2100006: white
-    2100008: blu
-    2100010: brown
-    2100012: black
+    2100000: wood
+    2100002: black
+    2100004: gray
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pSphere12
+    4300000: pCube5
     9500000: //RootNode
   externalObjects: {}
   materials:
