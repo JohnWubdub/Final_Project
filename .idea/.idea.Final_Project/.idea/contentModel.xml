@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Tyler\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Final_Project.631607769.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Tyler\Documents\Final_Project" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -17,19 +16,29 @@
           <e p="Global.cs" t="Include" />
           <e p="Minigame 1" t="Include">
             <e p="MenuSelection.cs" t="Include" />
+            <e p="Sound.cs" t="Include" />
             <e p="Timer.cs" t="Include" />
           </e>
           <e p="Minigame 2" t="Include">
             <e p="FightKeys.cs" t="Include" />
+            <e p="Sound2.cs" t="Include" />
             <e p="Timer2.cs" t="Include" />
           </e>
           <e p="Minigame 3" t="Include">
             <e p="Hiccups.cs" t="Include" />
+            <e p="Sound3.cs" t="Include" />
             <e p="Timer3.cs" t="Include" />
           </e>
           <e p="Minigame 4" t="Include">
             <e p="PressInq.cs" t="Include" />
+            <e p="Sound4.cs" t="Include" />
             <e p="Timer4.cs" t="Include" />
+          </e>
+          <e p="Minigame 5" t="Include">
+            <e p="ShortGirlMovement.cs" t="Include" />
+            <e p="Sound5.cs" t="Include" />
+            <e p="TallGirlMovement.cs" t="Include" />
+            <e p="Timer5.cs" t="Include" />
           </e>
           <e p="MiniGameStartScript.cs" t="Include" />
           <e p="SingletonHelper.cs" t="Include" />
@@ -44,5 +53,6 @@
         <e p="bin" t="ExcludeRecursive" />
       </e>
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2017.3/resharper-host/local/Transient/ReSharperHost/v11/SolutionCaches/_Final_Project.-1785380313.00" t="ExcludeRecursive" />
   </component>
 </project>
