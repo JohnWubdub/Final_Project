@@ -5,10 +5,11 @@ using UnityEngine;
 public class Timer4 : MonoBehaviour 
 {
 
-	public float timeLeft = 10f;
+	private float timeLeft = 7f;
 	public GameObject timeDisplay;
 	public bool timeUp = false;
 	public bool subTime = true;
+
 
 	void Start () 
 	{
