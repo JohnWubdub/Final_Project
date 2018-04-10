@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 783229541}
   - component: {fileID: 783229540}
   - component: {fileID: 783229543}
+  - component: {fileID: 783229544}
   m_Layer: 0
   m_Name: Hiccups
   m_TagString: Untagged
@@ -536,6 +537,17 @@ MonoBehaviour:
   timer: {fileID: 654697190}
   hiccupNum: 0
   tinyTimer: 0.5
+--- !u!114 &783229544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783229539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf09cd702cf239444bf8f09b7dc6ecb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &787727715
 GameObject:
   m_ObjectHideFlags: 0

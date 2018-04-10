@@ -6,7 +6,7 @@ using UnityEngine.WSA;
 public class PressInq : MonoBehaviour 
 {
 
-	private KeyCode[] keyChain = new KeyCode[6];
+	private KeyCode[] keyChain = new KeyCode[10];
 	
 	private KeyCode[] keyLetters = new KeyCode[]{KeyCode.A,KeyCode.D, KeyCode.Space}; 
 
@@ -27,10 +27,23 @@ public class PressInq : MonoBehaviour
 	
 	void Start () 
 	{
-		for (int i = 0; i < 6; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			int num = Random.Range(0, 3);
 			
+			if (i > 0 && keyChain[i - 1] == KeyCode.A)
+			{
+				num = Random.Range(1, 3);
+			}
+			if (i > 0 && keyChain[i - 1] == KeyCode.D)
+			{
+				num = Random.Range(0, 3);
+			}
+			if (i > 0 && keyChain[i - 1] == KeyCode.Space)
+			{
+				num = Random.Range(0, 2);
+			}
+				
 			keyChain[i] = keyLetters[num];
 		}
 	}
@@ -38,7 +51,7 @@ public class PressInq : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (i < 6 && i >= 0)
+		if (i < 10 && i >= 0)
 		{
 
 			if (keyChain[i] == keyLetters[0]) //if it's A (the left side)

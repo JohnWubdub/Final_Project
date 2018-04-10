@@ -7,7 +7,6 @@ using UnityEngine.WSA;
 
 public class MenuSelection : MonoBehaviour //main script for first minigame interaction
 {
-	
 	public GameObject[] options;
 
 	public GameObject[] text;
@@ -35,21 +34,25 @@ public class MenuSelection : MonoBehaviour //main script for first minigame inte
 
 	
 	
+	
 	void cursor()
 	{
 		
 		if (Input.GetKeyUp(KeyCode.W) == true && timer.GetComponent<Timer>().timeUp == false) //scrolling through the options (going up)
 		{
 			current -= 1;
+			GetComponent<Sound>().Menu();
 		}
 		
 		if (Input.GetKeyUp(KeyCode.S) == true && timer.GetComponent<Timer>().timeUp == false) //scrolling through the options (going down)
 		{
 			current += 1;
+			GetComponent<Sound>().Menu();
 		}
 		
 		options[current].GetComponent<Renderer>().enabled = true;
 
+		
 
 		if (((current + 1) < 6))
 		{
@@ -78,6 +81,7 @@ public class MenuSelection : MonoBehaviour //main script for first minigame inte
 		if (current == 3 && Input.GetKeyUp(KeyCode.Space)) //if right the first time
 		{
 			first = true;
+			this.GetComponent<Sound>().Select();
 		}
 
 		if (first == true)
@@ -93,6 +97,7 @@ public class MenuSelection : MonoBehaviour //main script for first minigame inte
 		if (current == 0 && Input.GetKeyUp(KeyCode.Space) && first == true) //if right again
 		{
 			second = true;
+			this.GetComponent<Sound>().Select();
 		}
 
 		if (first == true && second == true) //winning
