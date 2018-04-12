@@ -10,9 +10,9 @@ public class Hiccups : MonoBehaviour
 	public bool space = false;
 	public bool win = false;
 
-	public int hiccupNum;
+	private int hiccupNum;
 
-	public float tinyTimer = .5f;
+	private float tinyTimer = .3f;
 
 	private float stanAddingTime = 2f;
 
@@ -20,7 +20,7 @@ public class Hiccups : MonoBehaviour
 	
 	void Start ()
 	{
-		hiccupNum = Random.Range(70, 75);
+		hiccupNum = Random.Range(0, 10);
 	}
 	
 
@@ -53,12 +53,12 @@ public class Hiccups : MonoBehaviour
 		if (hiccupNum > 99)
 		{
 			timer.GetComponent<Timer3>().subTime = false;
-			this.GetComponent<TextMesh>().text = "You were killed!";
+			GetComponent<TextMesh>().text = "You were killed!";
 		}
 
 		if (timer.GetComponent<Timer3>().timeUp == true)
 		{
-			this.GetComponent<TextMesh>().text = "Done";
+			GetComponent<TextMesh>().text = "Done";
 		}
 	}
 
