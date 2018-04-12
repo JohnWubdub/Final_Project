@@ -48,6 +48,7 @@ public class Hiccups : MonoBehaviour
 			GetComponent<TextMesh>().text = "You win";
 			timer.GetComponent<Timer3>().subTime = false;
 			win = true;
+//			Placeholder for global win state boolean
 		}
 
 		if (hiccupNum > 99)

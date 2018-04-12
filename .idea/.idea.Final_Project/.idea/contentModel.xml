@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\Tyler\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Final_Project.631607769.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Tyler\Documents\Final_Project" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -35,12 +36,14 @@
             <e p="Timer4.cs" t="Include" />
           </e>
           <e p="Minigame 5" t="Include">
+            <e p="GirlRunning.cs" t="Include" />
             <e p="ShortGirlMovement.cs" t="Include" />
             <e p="Sound5.cs" t="Include" />
             <e p="TallGirlMovement.cs" t="Include" />
             <e p="Timer5.cs" t="Include" />
           </e>
           <e p="MiniGameStartScript.cs" t="Include" />
+          <e p="SceneShuffle.cs" t="Include" />
           <e p="SingletonHelper.cs" t="Include" />
           <e p="tutorialGo.cs" t="Include" />
         </e>
@@ -53,6 +56,5 @@
         <e p="bin" t="ExcludeRecursive" />
       </e>
     </e>
-    <e p="$USER_HOME$/Library/Caches/Rider2017.3/resharper-host/local/Transient/ReSharperHost/v11/SolutionCaches/_Final_Project.-1785380313.00" t="ExcludeRecursive" />
   </component>
 </project>
