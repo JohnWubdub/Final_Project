@@ -795,7 +795,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2061660725}
-  m_Text: 'Press: A + S!'
+  m_Text: A + S
   m_OffsetZ: 0
   m_CharacterSize: 0.5
   m_LineSpacing: 1
