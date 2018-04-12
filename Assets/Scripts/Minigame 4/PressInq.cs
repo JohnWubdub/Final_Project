@@ -24,27 +24,21 @@ public class PressInq : MonoBehaviour
 	
 	private int i = 0;
 	private bool advance = false;
+	private int j = 0;
+	private bool spaghetti;
 	
 	void Start () 
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			int num = Random.Range(0, 3);
-			
-			if (i > 0 && keyChain[i - 1] == KeyCode.A)
+			keyChain[i] = keyLetters[Random.Range(0, 3)];
+			if (i > 0)
 			{
-				num = Random.Range(1, 3);
+				while (keyChain[i] == keyChain[i - 1])
+				{
+					keyChain[i] = keyLetters[Random.Range(0, 3)];
+				}
 			}
-			if (i > 0 && keyChain[i - 1] == KeyCode.D)
-			{
-				num = Random.Range(0, 3);
-			}
-			if (i > 0 && keyChain[i - 1] == KeyCode.Space)
-			{
-				num = Random.Range(0, 2);
-			}
-				
-			keyChain[i] = keyLetters[num];
 		}
 	}
 	
@@ -109,7 +103,11 @@ public class PressInq : MonoBehaviour
 
 			if (friend == true) //activate the renderer
 			{
-				int j = Random.Range(1, 2);
+				while (spaghetti == false)
+				{
+					j = Random.Range(1, 3);
+					spaghetti = true;
+				}
 
 				if (j == 1)
 				{
@@ -128,6 +126,7 @@ public class PressInq : MonoBehaviour
 				rightFriend.GetComponent<Renderer>().enabled = false;
 				advance = true;
 				friend = false;
+				spaghetti = false;
 			}
 			else
 			{
@@ -157,6 +156,7 @@ public class PressInq : MonoBehaviour
 			{
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Win!";
 				timer.GetComponent<Timer4>().subTime = false;
+//				Placeholder for global win state boolean
 			}
 		}
 	}

@@ -110,6 +110,7 @@ public class MenuSelection : MonoBehaviour //main script for first minigame inte
 			answer.GetComponent<TextMesh>().text = "No";
 			timer.GetComponent<Timer>().subTime = false;
 			response.GetComponent<TextMesh>().text = "   ";
+//			Placeholder for global win state boolean
 		}
 		
 		
