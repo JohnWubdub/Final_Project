@@ -43,7 +43,7 @@ public class GirlRunning : MonoBehaviour
 
 		if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
 		{
-			currentGirl.transform.position += new Vector3(.5f,0,0);
+			currentGirl.transform.position += new Vector3(.25f,0,0);
 			run = !run;
 		}
 
@@ -72,9 +72,10 @@ public class GirlRunning : MonoBehaviour
 			firstLetter = textLetters[num1];
 			secondletter = textLetters[num2];
 
-			runText.GetComponent<TextMesh>().text = "Press " + firstLetter + " + " + secondletter + "!";
+			runText.GetComponent<TextMesh>().text = firstLetter + " + " + secondletter;
 		}
 
-		otherGirl.transform.position -= new Vector3(Time.deltaTime, 0, 0);
+		otherGirl.transform.position -= new Vector3(Time.deltaTime * 1.5f, 0, 0);
+		runText.transform.position = currentGirl.transform.position + new Vector3(0, 2f, 0);
 	}
 }
