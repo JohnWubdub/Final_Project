@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1341,8 +1341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f7f5300581cf40b5497d31d54ac92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 10
-  timeDisplay: {fileID: 654697190}
   timeUp: 0
   subTime: 1
 --- !u!102 &654697192
@@ -1407,7 +1405,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 654697190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75, y: 6.39, z: 0.39}
+  m_LocalPosition: {x: -3.12, y: 6.77, z: 0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1720,7 +1718,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 783229539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.24, y: 3.53, z: 0.74}
+  m_LocalPosition: {x: 3.24, y: 3.76, z: 0.74}
   m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1738,8 +1736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 654697190}
-  hiccupNum: 0
-  tinyTimer: 0.5
+  space: 0
+  win: 0
 --- !u!114 &783229544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,6 +1749,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf09cd702cf239444bf8f09b7dc6ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hiccupSound: {fileID: 0}
+  backSound: {fileID: 0}
+  winSound: {fileID: 0}
+  failSound: {fileID: 0}
+  volume: 0.1
+  backvolume: 0.25
+  audSource: {fileID: 0}
 --- !u!1 &787727715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,16 +2565,12 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357434326}
-  m_Text: 'If you hiccup
-
-    over 99 times
-
-    I will kill you'
+  m_Text: "Hiccup 99 times \nor\nI will kill you"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 100
   m_FontStyle: 0
@@ -2619,7 +2620,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357434326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.69, y: 4.55, z: 1.1}
+  m_LocalPosition: {x: -7.59, y: 5.29, z: 1.1}
   m_LocalScale: {x: 0.78, y: 0.7799999, z: 0.7799999}
   m_Children: []
   m_Father: {fileID: 0}
