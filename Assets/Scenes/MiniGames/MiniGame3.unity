@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,8 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: bc8c58a54f65646d1afc3c1a047f42fc,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -143,7 +142,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.93333334, g: 0.7254902, b: 0.35686275, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -733,7 +732,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.8862069, b: 0.25, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
@@ -1342,8 +1341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f7f5300581cf40b5497d31d54ac92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 10
-  timeDisplay: {fileID: 654697190}
   timeUp: 0
   subTime: 1
 --- !u!102 &654697192
@@ -1408,7 +1405,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 654697190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75, y: 6.39, z: 0.39}
+  m_LocalPosition: {x: -3.12, y: 6.77, z: 0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1721,7 +1718,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 783229539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.24, y: 3.53, z: 0.74}
+  m_LocalPosition: {x: 3.24, y: 3.76, z: 0.74}
   m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1741,8 +1738,6 @@ MonoBehaviour:
   timer: {fileID: 654697190}
   space: 0
   win: 0
-  hiccupNum: 0
-  tinyTimer: 0.5
 --- !u!114 &783229544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2570,16 +2565,12 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357434326}
-  m_Text: 'If you hiccup
-
-    over 99 times
-
-    I will kill you'
+  m_Text: "Hiccup 99 times \nor\nI will kill you"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 100
   m_FontStyle: 0
@@ -2629,7 +2620,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357434326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.69, y: 4.55, z: 1.1}
+  m_LocalPosition: {x: -7.59, y: 5.29, z: 1.1}
   m_LocalScale: {x: 0.78, y: 0.7799999, z: 0.7799999}
   m_Children: []
   m_Father: {fileID: 0}

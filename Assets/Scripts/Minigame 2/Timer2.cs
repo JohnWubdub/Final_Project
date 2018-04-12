@@ -5,19 +5,13 @@ using UnityEngine;
 public class Timer2 : MonoBehaviour 
 {
 
-	public float timeLeft = 10f;
-	public GameObject timeDisplay;
+	private float timeLeft = 6f;
 	public bool timeUp = false;
 	public bool subTime = true;
 
-	void Start () 
-	{
-		
-	}
-	
 	void Update () 
 	{
-		timeDisplay.GetComponent<TextMesh>().text = "Time Left: " + timeLeft;
+		GetComponent<TextMesh>().text = "Time Left: " + (int)timeLeft;
 		timing();
 	}
 
@@ -31,7 +25,7 @@ public class Timer2 : MonoBehaviour
 		if (timeLeft < 0)
 		{
 			timeUp = true;
-			this.GetComponent<TextMesh>().text = "Time Left: 0";
+			GetComponent<TextMesh>().text = "Time Left: 0";
 		}
 	}
 }

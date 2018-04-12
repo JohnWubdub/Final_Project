@@ -10,9 +10,9 @@ public class Hiccups : MonoBehaviour
 	public bool space = false;
 	public bool win = false;
 
-	public int hiccupNum;
+	private int hiccupNum;
 
-	public float tinyTimer = .5f;
+	private float tinyTimer = .2f;
 
 	private float stanAddingTime = 2f;
 
@@ -20,7 +20,7 @@ public class Hiccups : MonoBehaviour
 	
 	void Start ()
 	{
-		hiccupNum = Random.Range(70, 75);
+		hiccupNum = Random.Range(80, 85);
 	}
 	
 
@@ -28,12 +28,12 @@ public class Hiccups : MonoBehaviour
 	{
 		GetComponent<TextMesh>().text = "Hiccups: " + hiccupNum;
 		
-		if (timer.GetComponent<Timer3>().timeUp == false && space == false && win == false)
+		if (Input.GetKey(KeyCode.Space) && timer.GetComponent<Timer3>().timeUp == false && win == false)
 		{
 			addingHiccup();
 		}
 
-		if (Input.GetKey(KeyCode.Space) && hiccupNum <= 99 && timer.GetComponent<Timer3>().timeUp == false )
+		if (hiccupNum == 99 && timer.GetComponent<Timer3>().timeUp == false) //almost win condition
 		{
 			tinyTimer -= Time.deltaTime;
 			space = true;
@@ -43,7 +43,7 @@ public class Hiccups : MonoBehaviour
 			space = false;
 		}
 		
-		if (tinyTimer < 0 && hiccupNum <= 99 && timer.GetComponent<Timer3>().timeUp == false)
+		if (tinyTimer <= 0 && hiccupNum == 99 && timer.GetComponent<Timer3>().timeUp == false) //win condition
 		{
 			GetComponent<TextMesh>().text = "You win";
 			timer.GetComponent<Timer3>().subTime = false;
@@ -51,16 +51,13 @@ public class Hiccups : MonoBehaviour
 //			Placeholder for global win state boolean
 		}
 
-		if (hiccupNum > 99)
+		if (hiccupNum > 99 || timer.GetComponent<Timer3>().timeUp == true || hiccupNum < 99 &&
+		    timer.GetComponent<Timer3>().timeUp == true)
 		{
 			timer.GetComponent<Timer3>().subTime = false;
-			this.GetComponent<TextMesh>().text = "You were killed!";
+			GetComponent<TextMesh>().text = "You were killed!";
 		}
 
-		if (timer.GetComponent<Timer3>().timeUp == true)
-		{
-			this.GetComponent<TextMesh>().text = "Done";
-		}
 	}
 
 	void addingHiccup()

@@ -2,23 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer4 : MonoBehaviour 
+public class Timer4 : MonoBehaviour //timer 4
 {
 
 	private float timeLeft = 7f;
-	public GameObject timeDisplay;
 	public bool timeUp = false;
 	public bool subTime = true;
 
-
-	void Start () 
-	{
-		
-	}
 	
 	void Update () 
 	{
-		timeDisplay.GetComponent<TextMesh>().text = "Time Left: " + timeLeft;
+		GetComponent<TextMesh>().text = "Time Left: " + (int)timeLeft;
 		timing();
 	}
 
@@ -32,7 +26,7 @@ public class Timer4 : MonoBehaviour
 		if (timeLeft < 0)
 		{
 			timeUp = true;
-			this.GetComponent<TextMesh>().text = "Time Left: 0";
+			GetComponent<TextMesh>().text = "Time Left: 0";
 		}
 	}
 }

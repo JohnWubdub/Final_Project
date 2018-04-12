@@ -2,22 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer3 : MonoBehaviour 
+public class Timer3 : MonoBehaviour //timer 3
 {
 
-	public float timeLeft = 5f;
-	public GameObject timeDisplay;
+	private float timeLeft = 5f;
 	public bool timeUp = false;
 	public bool subTime = true;
 
-	void Start () 
-	{
-		
-	}
-	
 	void Update () 
 	{
-		timeDisplay.GetComponent<TextMesh>().text = "Time Left: " + timeLeft;
+		GetComponent<TextMesh>().text = "Time Left: " + (int)timeLeft;
 		timing();
 	}
 
@@ -31,7 +25,7 @@ public class Timer3 : MonoBehaviour
 		if (timeLeft < 0)
 		{
 			timeUp = true;
-			this.GetComponent<TextMesh>().text = "Time Left: 0";
+			GetComponent<TextMesh>().text = "Time Left: 0";
 		}
 	}
 }
