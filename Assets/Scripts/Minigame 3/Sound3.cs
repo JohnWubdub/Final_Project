@@ -9,6 +9,7 @@ public class Sound3 : MonoBehaviour
 	public AudioClip backSound;
 	public AudioClip winSound;
 	public AudioClip failSound;
+	public AudioClip beep;
 
 	public float volume = .1f;
 	public float backvolume = .25f;
@@ -41,5 +42,10 @@ public class Sound3 : MonoBehaviour
 	public void Fail()
 	{
 		audSources[4].PlayOneShot(failSound, volume);
+	}
+	
+	public void Hurry()
+	{
+		audSources[5].PlayOneShot(beep, volume);
 	}
 }

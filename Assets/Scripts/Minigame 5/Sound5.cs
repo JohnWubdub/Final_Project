@@ -10,6 +10,7 @@ public class Sound5 : MonoBehaviour //sounds for scene 5
 	public AudioClip backSound;
 	public AudioClip winSound;
 	public AudioClip failSound;
+	public AudioClip beep;
 
 	public float volume = .1f;
 	public float backvolume = .25f;
@@ -47,5 +48,10 @@ public class Sound5 : MonoBehaviour //sounds for scene 5
 	public void Fail()
 	{
 		audSources[4].PlayOneShot(failSound, volume);
+	}
+	
+	public void Hurry()
+	{
+		audSources[5].PlayOneShot(beep, volume);
 	}
 }

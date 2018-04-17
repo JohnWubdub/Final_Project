@@ -8,11 +8,27 @@ public class Timer3 : MonoBehaviour //timer 3
 	private float timeLeft = 5f;
 	public bool timeUp = false;
 	public bool subTime = true;
+	public GameObject sound; 
 
 	void Update () 
 	{
 		GetComponent<TextMesh>().text = "Time Left: " + (int)timeLeft;
 		timing();
+		
+		if (timeLeft == 3)
+		{
+			sound.GetComponent<Sound3>().Hurry();
+		}
+		
+		if (timeLeft == 2)
+		{
+			sound.GetComponent<Sound3>().Hurry();
+		}
+		
+		if (timeLeft == 1)
+		{
+			sound.GetComponent<Sound3>().Hurry();
+		}
 	}
 
 	void timing()
