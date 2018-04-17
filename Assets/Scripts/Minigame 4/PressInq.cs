@@ -20,6 +20,7 @@ public class PressInq : MonoBehaviour
 	public GameObject leftFriend;
 
 	public GameObject timer;
+	public GameObject helpText;
 	
 	private int i = 0;
 	private bool advance = false;
@@ -55,6 +56,8 @@ public class PressInq : MonoBehaviour
 			if (left == true) //activate the renderer
 			{
 				leftMan.GetComponent<Renderer>().enabled = true;
+				helpText.GetComponent<TextMesh>().text = "A";
+				helpText.transform.position = leftMan.transform.position + new Vector3(0,2f,0);
 			}
 
 			if (left == true && Input.GetKeyUp(KeyCode.A)) //checking to see if they are right
@@ -79,6 +82,8 @@ public class PressInq : MonoBehaviour
 			if (right == true) //activate the renderer
 			{
 				rightMan.GetComponent<Renderer>().enabled = true;
+				helpText.GetComponent<TextMesh>().text = "D";
+				helpText.transform.position = rightMan.transform.position + new Vector3(0,2f,0);
 			}
 
 			if (right == true && Input.GetKeyUp(KeyCode.D)) //checking to see if they are right
@@ -111,12 +116,16 @@ public class PressInq : MonoBehaviour
 				if (j == 1)
 				{
 					rightFriend.GetComponent<Renderer>().enabled = true;
+					helpText.transform.position = rightFriend.transform.position + new Vector3(0,2f,0);
 				}
 
 				if (j == 2)
 				{
 					leftFriend.GetComponent<Renderer>().enabled = true;
+					helpText.transform.position = leftFriend.transform.position + new Vector3(0,2f,0);
 				}
+				
+				helpText.GetComponent<TextMesh>().text = "Space";
 			}
 
 			if (friend == true && Input.GetKeyUp(KeyCode.Space)) //checking to see if they are right
@@ -154,6 +163,7 @@ public class PressInq : MonoBehaviour
 			if (i > -1)
 			{
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Win!";
+				helpText.GetComponent<Renderer>().enabled = false;
 				timer.GetComponent<Timer4>().subTime = false;
 //				Placeholder for global win state boolean
 			}
