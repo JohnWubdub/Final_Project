@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework.Internal.Execution;
 using UnityEngine;
 
 public class FightKeys : MonoBehaviour //fighting mini game main script
