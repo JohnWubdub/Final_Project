@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer6 : MonoBehaviour {
+public class MinigameTutorials : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

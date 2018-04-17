@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Headmov : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	
+	void Start () 
+	{
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
+
+	void Update () 
+	{
 		
 	}
 }
