@@ -14,12 +14,14 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Global.cs" t="Include" />
-          <e p="Minigame 1" t="Include">
-            <e p="MenuSelection.cs" t="Include" />
-            <e p="Sound.cs" t="Include" />
-            <e p="Timer.cs" t="Include" />
+          <e p="Defunct" t="Include">
+            <e p="Minigame 1" t="Include">
+              <e p="MenuSelection.cs" t="Include" />
+              <e p="Sound.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
+            </e>
           </e>
+          <e p="Global.cs" t="Include" />
           <e p="Minigame 2" t="Include">
             <e p="FightKeys.cs" t="Include" />
             <e p="Sound2.cs" t="Include" />
@@ -37,15 +39,19 @@
           </e>
           <e p="Minigame 5" t="Include">
             <e p="GirlRunning.cs" t="Include" />
-            <e p="ShortGirlMovement.cs" t="Include" />
             <e p="Sound5.cs" t="Include" />
-            <e p="TallGirlMovement.cs" t="Include" />
             <e p="Timer5.cs" t="Include" />
           </e>
+          <e p="Minigame 6" t="Include">
+            <e p="Handmove.cs" t="Include" />
+            <e p="Headmov.cs" t="Include" />
+            <e p="Sound 6.cs" t="Include" />
+            <e p="Timer6.cs" t="Include" />
+          </e>
           <e p="MiniGameStartScript.cs" t="Include" />
+          <e p="MinigameTutorials.cs" t="Include" />
           <e p="SceneShuffle.cs" t="Include" />
           <e p="SingletonHelper.cs" t="Include" />
-          <e p="tutorialGo.cs" t="Include" />
         </e>
       </e>
       <e p="Final_Project.sln" t="IncludeFlat" />
