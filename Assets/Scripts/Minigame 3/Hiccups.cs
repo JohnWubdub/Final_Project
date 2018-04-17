@@ -17,10 +17,12 @@ public class Hiccups : MonoBehaviour
 	private float stanAddingTime = 2f;
 
 	private float addTimer = 2f;
+
+	private float waitTimer = 0;
 	
 	void Start ()
 	{
-		hiccupNum = Random.Range(80, 85);
+		hiccupNum = Random.Range(50, 76);
 	}
 	
 
@@ -30,7 +32,26 @@ public class Hiccups : MonoBehaviour
 		
 		if (Input.GetKey(KeyCode.Space) && timer.GetComponent<Timer3>().timeUp == false && win == false)
 		{
-			addingHiccup();
+//			addingHiccup();
+		}
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			hiccupNum++;
+		}
+		
+		if (Input.GetKey(KeyCode.Space))
+		{
+			waitTimer += .1f;
+			if (waitTimer >= 2f)
+			{
+				hiccupNum++;
+			}
+		}
+
+		if (Input.GetKeyUp(KeyCode.Space))
+		{
+			waitTimer = 0;
 		}
 
 		if (hiccupNum == 99 && timer.GetComponent<Timer3>().timeUp == false) //almost win condition
