@@ -1,22 +1,72 @@
 fileFormatVersion: 2
-guid: 15c4e3fda16854e9391e41eab3148580
-timeCreated: 1522944212
+guid: 97b7e1da0496c4f67ad66394b61880dd
+timeCreated: 1524147778
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: hairbrown
+    100000: group
+    100002: pasted__pSphere13
+    100004: pasted__pSphere14
+    100006: pCube17
+    100008: pCube18
+    100010: pCube24
+    100012: pCube25
+    100014: pCylinder40
+    100016: pCylinder41
+    100018: pCylinder42
+    100020: pCylinder43
+    100022: pCylinder52
+    100024: pCylinder53
+    100026: //RootNode
+    100028: transform1
+    100030: transform10
+    100032: transform11
+    100034: transform2
+    100036: transform3
+    100038: transform4
+    100040: transform5
+    100042: transform6
+    100044: transform7
+    100046: transform8
+    100048: transform9
+    400000: group
+    400002: pasted__pSphere13
+    400004: pasted__pSphere14
+    400006: pCube17
+    400008: pCube18
+    400010: pCube24
+    400012: pCube25
+    400014: pCylinder40
+    400016: pCylinder41
+    400018: pCylinder42
+    400020: pCylinder43
+    400022: pCylinder52
+    400024: pCylinder53
+    400026: //RootNode
+    400028: transform1
+    400030: transform10
+    400032: transform11
+    400034: transform2
+    400036: transform3
+    400038: transform4
+    400040: transform5
+    400042: transform6
+    400044: transform7
+    400046: transform8
+    400048: transform9
+    2100000: red
     2100002: skin
-    2100004: face
-    2100006: white
-    2100008: blu
-    2100010: brown
-    2100012: black
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere12
+    2100004: white
+    2100006: blu
+    2100008: material
+    2100010: pipimiface
+    2100012: brown
+    2100014: black
+    2300000: pCube25
+    3300000: pCube25
+    4300000: pCube25
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
