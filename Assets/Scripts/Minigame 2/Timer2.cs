@@ -12,7 +12,7 @@ public class Timer2 : MonoBehaviour
 
 	void Update () 
 	{
-		GetComponent<TextMesh>().text = "Time Left: " + (int)timeLeft;
+		GetComponent<TextMesh>().text = "Time Left: " + timeLeft.ToString("F");
 		timing();
 
 		if (timeLeft == 3)

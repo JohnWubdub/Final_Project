@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class MiniGameStartScript : MonoBehaviour //Menu script used to select the minigame they want to play
 {
 	
-	public Button mgStart1;
+/*	public Button mgStart1;
 	public Button mgStart2;
 	public Button mgStart3;
 	public Button mgStart4;
@@ -30,10 +30,32 @@ public class MiniGameStartScript : MonoBehaviour //Menu script used to select th
 		btn3.onClick.AddListener(delegate {TaskOnClick(3);});
 		btn4.onClick.AddListener(delegate {TaskOnClick(4);});
 		btn5.onClick.AddListener(delegate {TaskOnClick(5);});
+	
 	}
 
 	void TaskOnClick (int level){
 //		img.enabled = true;
 		SceneManager.LoadScene(level);
+	}
+
+*/ 	public void StartGame1()
+	{
+		SceneManager.LoadScene(1);
+	}
+	public void StartGame2()
+	{
+		SceneManager.LoadScene(2);
+	}
+	public void StartGame3()
+	{
+		SceneManager.LoadScene(3);
+	}
+	public void StartGame4()
+	{
+		SceneManager.LoadScene(4);
+	}
+	public void StartGame5()
+	{
+		SceneManager.LoadScene(5);
 	}
 }
