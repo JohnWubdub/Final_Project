@@ -42,46 +42,54 @@ public class GirlRunning : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 
-		if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
+		if (otherGirl.transform.position.x >= -7.5f)
 		{
-			currentGirl.transform.position += new Vector3(.25f,0,0);
-			run = !run;
-		}
-
-		if (Input.GetKeyUp(KeyCode.Space))
-		{
-			if (currentGirl == tallGirl)
+			if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
 			{
-				currentGirl = shortGirl;
-				otherGirl = tallGirl;
-			}
-			else
-			{
-				currentGirl = tallGirl;
-				otherGirl = shortGirl;
+				currentGirl.transform.position += new Vector3(.25f, 0, 0);
+				run = !run;
 			}
 
-			num1 = Random.Range(0, 4);
-			num2 = Random.Range(0, 4);
-			while (num1 == num2)
+			if (Input.GetKeyUp(KeyCode.Space))
 			{
+				if (currentGirl == tallGirl)
+				{
+					currentGirl = shortGirl;
+					otherGirl = tallGirl;
+				}
+				else
+				{
+					currentGirl = tallGirl;
+					otherGirl = shortGirl;
+				}
+
+				num1 = Random.Range(0, 4);
 				num2 = Random.Range(0, 4);
+				while (num1 == num2)
+				{
+					num2 = Random.Range(0, 4);
+				}
+
+				firstKey = keyLetters[num1];
+				secondKey = keyLetters[num2];
+				firstLetter = textLetters[num1];
+				secondletter = textLetters[num2];
+
+				runText.GetComponent<TextMesh>().text = firstLetter + " + " + secondletter;
 			}
 
-			firstKey = keyLetters[num1];
-			secondKey = keyLetters[num2];
-			firstLetter = textLetters[num1];
-			secondletter = textLetters[num2];
+			otherGirl.transform.position -= new Vector3(Time.deltaTime * 1.5f, 0, 0);
+			runText.transform.position = currentGirl.transform.position + new Vector3(0, 2f, 0);
 
-			runText.GetComponent<TextMesh>().text = firstLetter + " + " + secondletter;
+			if (timer.GetComponent<Timer5>().timeUp == true)
+			{
+				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
+			}
 		}
-
-		otherGirl.transform.position -= new Vector3(Time.deltaTime * 1.5f, 0, 0);
-		runText.transform.position = currentGirl.transform.position + new Vector3(0, 2f, 0);
-
-		if (timer.GetComponent<Timer5>().timeUp == true)
+		else
 		{
-			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
+			runText.GetComponent<TextMesh>().text = "You Lose!";
+			timer.GetComponent<Timer5>().subTime = false;
 		}
 	}
 }
