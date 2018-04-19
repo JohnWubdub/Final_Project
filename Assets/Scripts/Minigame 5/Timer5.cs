@@ -38,7 +38,7 @@ public class Timer5 : MonoBehaviour
 			timeLeft -= Time.deltaTime;
 		}
 		
-		if (timeLeft < 0)
+		if (timeLeft <= 0)
 		{
 			timeUp = true;
 			GetComponent<TextMesh>().text = "Time Left: 0";

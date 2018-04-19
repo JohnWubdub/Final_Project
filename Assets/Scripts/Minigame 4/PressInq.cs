@@ -165,7 +165,7 @@ public class PressInq : MonoBehaviour
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Win!";
 				helpText.GetComponent<Renderer>().enabled = false;
 				timer.GetComponent<Timer4>().subTime = false;
-//				Placeholder for global win state boolean
+				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 			}
 		}
 	}

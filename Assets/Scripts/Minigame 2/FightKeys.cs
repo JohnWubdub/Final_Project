@@ -77,7 +77,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 		{
 			timer.GetComponent<Timer2>().subTime = false;
 			this.GetComponent<TextMesh>().text = "You win!";
-//			Placeholder for global win state boolean
+			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 		
 		if (timer.GetComponent<Timer2>().timeUp == true) //if the time runs out

@@ -9,6 +9,7 @@ public class GirlRunning : MonoBehaviour
 	public GameObject tallGirl;
 	public GameObject shortGirl;
 	public GameObject runText;
+	public GameObject timer;
 
 	private bool run;
 	private GameObject currentGirl;
@@ -77,5 +78,10 @@ public class GirlRunning : MonoBehaviour
 
 		otherGirl.transform.position -= new Vector3(Time.deltaTime * 1.5f, 0, 0);
 		runText.transform.position = currentGirl.transform.position + new Vector3(0, 2f, 0);
+
+		if (timer.GetComponent<Timer5>().timeUp == true)
+		{
+			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
+		}
 	}
 }

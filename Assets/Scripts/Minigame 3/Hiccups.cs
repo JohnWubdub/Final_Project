@@ -69,7 +69,7 @@ public class Hiccups : MonoBehaviour
 			GetComponent<TextMesh>().text = "You win";
 			timer.GetComponent<Timer3>().subTime = false;
 			win = true;
-//			Placeholder for global win state boolean
+			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 
 		if (hiccupNum > 99 || timer.GetComponent<Timer3>().timeUp == true || hiccupNum < 99 &&
