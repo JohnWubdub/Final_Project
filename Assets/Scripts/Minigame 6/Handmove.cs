@@ -9,20 +9,24 @@ public class Handmove : MonoBehaviour
 	
 	public int pleasure = 0;
 
+	private int win = 200;
+
 	public GameObject headText;
 
 	public GameObject head;
 
-	private float moveSpeed = .23f;
+	private float moveSpeed = .24f;
 
-	private float maxExtend = 5.83f;
+	private float maxExtend = 4.09f;
 
 	private float maxRetract = 8.74f;
+
+	public bool end = false;
 
 	
 	void Update () 
 	{
-		if (Input.GetKey(KeyCode.S) && timer.GetComponent<Timer6>().timeUp == false)
+		if (Input.GetKey(KeyCode.S) && timer.GetComponent<Timer6>().timeUp == false && end == false)
 		{
 			transform.position += new Vector3(0f, -moveSpeed, 0f);
 			if (transform.position.y <= maxExtend)
@@ -31,7 +35,7 @@ public class Handmove : MonoBehaviour
 			}
 		}
 
-		if (Input.GetKey(KeyCode.W) && timer.GetComponent<Timer6>().timeUp == false)
+		if (Input.GetKey(KeyCode.W) && timer.GetComponent<Timer6>().timeUp == false && end == false)
 		{
 			transform.position += new Vector3(0f, moveSpeed, 0f);
 			if (transform.position.y >= maxRetract)
@@ -40,27 +44,28 @@ public class Handmove : MonoBehaviour
 			}
 		}
 
-		if (Input.GetKey(KeyCode.A) && timer.GetComponent<Timer6>().timeUp == false)
+		if (Input.GetKey(KeyCode.A) && timer.GetComponent<Timer6>().timeUp == false && end == false)
 		{
 			transform.position += new Vector3(-moveSpeed, 0f, 0f);
 		}
 
-		if (Input.GetKey(KeyCode.D) && timer.GetComponent<Timer6>().timeUp == false)
+		if (Input.GetKey(KeyCode.D) && timer.GetComponent<Timer6>().timeUp == false && end == false)
 		{
 			transform.position += new Vector3(moveSpeed, 0f, 0f);
 		}
 
-		if (pleasure >= 10 && timer.GetComponent<Timer6>().timeUp == false)
+		if (pleasure >= win && timer.GetComponent<Timer6>().timeUp == false)
 		{
 			timer.GetComponent<Timer6>().subTime = false;
 			headText.GetComponent<TextMesh>().text = "OH YEAH!";
-			//stop the head
+			end = true;
 		}
 
-		if (pleasure < 10 && timer.GetComponent<Timer6>().timeUp == true)
+		if (pleasure < win && timer.GetComponent<Timer6>().timeUp == true)
 		{
 			timer.GetComponent<Timer6>().subTime = false;
 			headText.GetComponent<TextMesh>().text = "FUCK YOU!";
+			end = true;
 		}
 		
 	}
