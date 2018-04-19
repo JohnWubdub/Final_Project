@@ -9,6 +9,10 @@ public class Handmove : MonoBehaviour
 	
 	public int pleasure = 0;
 
+	public GameObject headText;
+
+	public GameObject head;
+
 	private float moveSpeed = .23f;
 
 	private float maxExtend = 5.83f;
@@ -46,26 +50,25 @@ public class Handmove : MonoBehaviour
 			transform.position += new Vector3(moveSpeed, 0f, 0f);
 		}
 
-		if (pleasure == 10 && timer.GetComponent<Timer6>().timeUp == false)
+		if (pleasure >= 10 && timer.GetComponent<Timer6>().timeUp == false)
 		{
-			//win 
+			timer.GetComponent<Timer6>().subTime = false;
+			headText.GetComponent<TextMesh>().text = "OH YEAH!";
+			//stop the head
 		}
 
-		if (pleasure < 10)
+		if (pleasure < 10 && timer.GetComponent<Timer6>().timeUp == true)
 		{
-			//stop fail
-		}
-
-		if (timer.GetComponent<Timer6>().timeUp == true)
-		{
-			//failure
+			timer.GetComponent<Timer6>().subTime = false;
+			headText.GetComponent<TextMesh>().text = "FUCK YOU!";
 		}
 		
 	}
 
-	private void OnCollisionEnter(Collision other)
+	private void OnCollisionStay(Collision other)
 	{
-		//chnaging the hand model to look like they are petting them
 		pleasure += 1;
+		Debug.Log("Fuck me");
+		//changing the hand model to look like they are petting them
 	}
 }
