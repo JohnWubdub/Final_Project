@@ -16,6 +16,7 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 
 	private void Awake()
 	{
+		DontDestroyOnLoad (transform.gameObject);
 		me = this; //awakens the script
 	}
 }

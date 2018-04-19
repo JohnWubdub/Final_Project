@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -42,11 +43,11 @@ public class GirlRunning : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 
-		if (otherGirl.transform.position.x >= -7.5f)
+		if (otherGirl.transform.position.x >= -7.5f )
 		{
 			if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
 			{
-				currentGirl.transform.position += new Vector3(.25f, 0, 0);
+				currentGirl.transform.position += new Vector3(.50f, 0, 0);
 				run = !run;
 			}
 
@@ -78,7 +79,7 @@ public class GirlRunning : MonoBehaviour
 				runText.GetComponent<TextMesh>().text = firstLetter + " + " + secondletter;
 			}
 
-			otherGirl.transform.position -= new Vector3(Time.deltaTime * 1.5f, 0, 0);
+			otherGirl.transform.position -= new Vector3(Time.deltaTime * 1f, 0, 0);
 			runText.transform.position = currentGirl.transform.position + new Vector3(0, 2f, 0);
 
 			if (timer.GetComponent<Timer5>().timeUp == true)
@@ -86,10 +87,10 @@ public class GirlRunning : MonoBehaviour
 				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 			}
 		}
-		else
+		
+		if(tallGirl.transform.position.x >= 10.5 && shortGirl.transform.position.x >= 10.5)
 		{
-			runText.GetComponent<TextMesh>().text = "You Lose!";
-			timer.GetComponent<Timer5>().subTime = false;
+			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 	}
 }
