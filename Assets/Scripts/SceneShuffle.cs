@@ -18,7 +18,8 @@ public class SceneShuffle : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 
 		if (win == true)
 		{
