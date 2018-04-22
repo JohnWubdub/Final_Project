@@ -23,7 +23,12 @@ public class Handmove : MonoBehaviour
 
 	public bool end = false;
 
-	
+
+	private void Start()
+	{
+		Global.me.currentMinigame = 5;
+	}
+
 	void Update () 
 	{
 		if (Input.GetKey(KeyCode.S) && timer.GetComponent<Timer6>().timeUp == false && end == false)
@@ -54,17 +59,18 @@ public class Handmove : MonoBehaviour
 			transform.position += new Vector3(moveSpeed, 0f, 0f);
 		}
 
-		if (pleasure >= win && timer.GetComponent<Timer6>().timeUp == false)
+		if (pleasure >= win && timer.GetComponent<Timer6>().timeUp == false) //winning
 		{
 			timer.GetComponent<Timer6>().subTime = false;
 			headText.GetComponent<TextMesh>().text = "OH YEAH!";
 			end = true;
 		}
 
-		if (pleasure < win && timer.GetComponent<Timer6>().timeUp == true)
+		if (pleasure < win && timer.GetComponent<Timer6>().timeUp == true) //fail
 		{
 			timer.GetComponent<Timer6>().subTime = false;
 			headText.GetComponent<TextMesh>().text = "FUCK YOU!";
+			Global.me.lives -= 1;
 			end = true;
 		}
 		

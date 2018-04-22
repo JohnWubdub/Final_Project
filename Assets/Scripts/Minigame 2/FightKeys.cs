@@ -15,6 +15,8 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 	void Start ()
 	{
 
+		Global.me.currentMinigame = 1;
+
 		char[] textLetters = {'W','A','S','D'};
 		string textChain = null;
 		
@@ -67,10 +69,12 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 				
 				this.GetComponent<TextMesh>().text = textChain;
 			} 
-			else if (Input.anyKey && !Input.GetKey(keyChain[count])) //wrong input
+			else if (Input.anyKey && !Input.GetKey(keyChain[count])) //failure
 			{
 				this.GetComponent<TextMesh>().text = "You Lose!";
 				timer.GetComponent<Timer2>().subTime = false;
+				Global.me.score1 = 0;
+				Global.me.lives -= 1;
 			}
 		}
 		else //winning
@@ -85,6 +89,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			Debug.Log("Fuck my dick");
 			timer.GetComponent<Timer2>().subTime = false;
 			this.GetComponent<TextMesh>().text = "You lose!";
+			Global.me.lives -= 1;
 		}
 		
 		Debug.Log(fightChars[0] + " + " + fightChars[1] + " + " + fightChars[2] + " + " + fightChars[3] + " + " + fightChars[4] + " + " + fightChars[5] + " + ");

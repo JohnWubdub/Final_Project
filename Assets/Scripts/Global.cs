@@ -11,8 +11,9 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 	public int score4;
 	public int score5;
 
-	public int finalScore = Global.me.score1 + Global.me.score2 + Global.me.score3 +
-	                        Global.me.score4 + Global.me.score5;
+	public int lives = 3;
+
+	public int currentMinigame = 0;
 
 	private void Awake()
 	{

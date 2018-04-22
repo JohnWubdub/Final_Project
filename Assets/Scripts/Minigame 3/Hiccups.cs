@@ -22,7 +22,8 @@ public class Hiccups : MonoBehaviour
 	
 	void Start ()
 	{
-		hiccupNum = Random.Range(50, 76);
+		hiccupNum = Random.Range(65, 76);
+		Global.me.currentMinigame = 2;
 	}
 	
 
@@ -73,10 +74,11 @@ public class Hiccups : MonoBehaviour
 		}
 
 		if (hiccupNum > 99 || timer.GetComponent<Timer3>().timeUp == true || hiccupNum < 99 &&
-		    timer.GetComponent<Timer3>().timeUp == true)
+		    timer.GetComponent<Timer3>().timeUp == true)  //failure
 		{
 			timer.GetComponent<Timer3>().subTime = false;
 			GetComponent<TextMesh>().text = "You were killed!";
+			Global.me.lives -= 1;
 		}
 
 	}
