@@ -43,8 +43,8 @@ public class GirlRunning : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 
-		if (otherGirl.transform.position.x >= -7.5f )
-		{
+		//if (otherGirl.transform.position.x >= -7.5f)
+		//{
 			if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
 			{
 				currentGirl.transform.position += new Vector3(.50f, 0, 0);
@@ -87,7 +87,7 @@ public class GirlRunning : MonoBehaviour
 				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 				Global.me.lives -= 1;
 			}
-		}
+		//}
 		
 		if(tallGirl.transform.position.x >= 10.5 && shortGirl.transform.position.x >= 10.5)
 		{
