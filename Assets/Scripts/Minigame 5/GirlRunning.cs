@@ -30,7 +30,7 @@ public class GirlRunning : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-
+		Global.me.currentMinigame = 4;
 		currentGirl = tallGirl;
 		otherGirl = shortGirl;
 		firstKey = KeyCode.A;
@@ -85,11 +85,13 @@ public class GirlRunning : MonoBehaviour
 			if (timer.GetComponent<Timer5>().timeUp == true)
 			{
 				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
+				Global.me.lives -= 1;
 			}
 		}
 		
 		if(tallGirl.transform.position.x >= 10.5 && shortGirl.transform.position.x >= 10.5)
 		{
+			timer.GetComponent<Timer5>().subTime = false;
 			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 	}

@@ -29,6 +29,8 @@ public class PressInq : MonoBehaviour
 	
 	void Start () 
 	{
+		Global.me.currentMinigame = 3;
+		
 		for (int i = 0; i < 10; i++)
 		{
 			keyChain[i] = keyLetters[Random.Range(0, 3)];
@@ -148,6 +150,7 @@ public class PressInq : MonoBehaviour
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Lose!";
 				i = -1;
 				timer.GetComponent<Timer4>().subTime = false;
+				Global.me.lives -= 1;
 			}
 
 			if (advance == true)
