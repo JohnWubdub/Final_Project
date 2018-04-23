@@ -10,6 +10,7 @@ public class SceneShuffle : MonoBehaviour
 
 	private int num;
 	private int games = 4;
+	private float timer = 2f;
 	
 	// Use this for initialization
 	void Start ()
@@ -23,11 +24,18 @@ public class SceneShuffle : MonoBehaviour
 
 		if (win == true)
 		{
-			while (num == SceneManager.GetActiveScene().buildIndex)
+			if (timer < 0)
 			{
-				num = Random.Range(1, games + 1);
+				while (num == SceneManager.GetActiveScene().buildIndex)
+				{
+					num = Random.Range(1, games + 1);
+				}
+				SceneManager.LoadScene(num);
 			}
-			SceneManager.LoadScene(num);
+			else
+			{
+				timer -= Time.deltaTime;
+			}
 		}
 		
 	}
