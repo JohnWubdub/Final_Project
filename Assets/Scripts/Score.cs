@@ -9,12 +9,14 @@ public class Score : MonoBehaviour {
 	public int game3;
 	public int game4;
 	public int game5;
+
+	public int[] played = new int[4];
+	public int playCount = 0;
 	
 	// Use this for initialization
 	void Start () {
 		
 		DontDestroyOnLoad (this.gameObject);
-		
 	}
 	
 	// Update is called once per frame
