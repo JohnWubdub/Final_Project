@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e19a5a05edfe449f887a11670bf3658c
-timeCreated: 1524579405
+guid: 075a867ae4f581e45a9f2664d5cdc4e3
+timeCreated: 1524585124
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -16,7 +16,6 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube13
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -91,7 +90,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

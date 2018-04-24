@@ -57,6 +57,7 @@
           <e p="MiniGameStartScript.cs" t="Include" />
           <e p="MinigameTutorials.cs" t="Include" />
           <e p="SceneShuffle.cs" t="Include" />
+          <e p="Score.cs" t="Include" />
           <e p="SingletonHelper.cs" t="Include" />
         </e>
       </e>
