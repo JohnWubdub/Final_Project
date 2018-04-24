@@ -10,11 +10,14 @@ public class SceneShuffle : MonoBehaviour
 
 	private int num;
 	private int games = 4;
+	private float timer = 2f;
 	
 	// Use this for initialization
 	void Start ()
 	{
 		num = SceneManager.GetActiveScene().buildIndex;
+		GameObject.Find("Score").GetComponent<Score>().played[GameObject.Find("Score").GetComponent<Score>().playCount] = num;
+		GameObject.Find("Score").GetComponent<Score>().playCount++;
 	}
 	
 	// Update is called once per frame
@@ -23,11 +26,30 @@ public class SceneShuffle : MonoBehaviour
 
 		if (win == true)
 		{
-			while (num == SceneManager.GetActiveScene().buildIndex)
+			if (timer < 0)
 			{
-				num = Random.Range(1, games + 1);
+				while ((num == GameObject.Find("Score").GetComponent<Score>().played[0] ||
+				        num == GameObject.Find("Score").GetComponent<Score>().played[1] ||
+				        num == GameObject.Find("Score").GetComponent<Score>().played[2] ||
+				        num == GameObject.Find("Score").GetComponent<Score>().played[3]) &&
+				       GameObject.Find("Score").GetComponent<Score>().playCount < 4)
+				{
+					num = Random.Range(1, games + 1);
+				}
+
+				if (GameObject.Find("Score").GetComponent<Score>().playCount < 4)
+				{
+					SceneManager.LoadScene(num);
+				}
+				else
+				{
+					SceneManager.LoadScene(6);
+				}
+		}
+			else
+			{
+				timer -= Time.deltaTime;
 			}
-			SceneManager.LoadScene(num);
 		}
 		
 	}

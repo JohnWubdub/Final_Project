@@ -21,7 +21,13 @@
               <e p="Timer.cs" t="Include" />
             </e>
           </e>
+          <e p="FinalScoring.cs" t="Include" />
           <e p="Global.cs" t="Include" />
+          <e p="In-between Scripts" t="Include">
+            <e p="Lives.cs" t="Include" />
+            <e p="Scoring.cs" t="Include" />
+            <e p="screenTimer.cs" t="Include" />
+          </e>
           <e p="Minigame 2" t="Include">
             <e p="FightKeys.cs" t="Include" />
             <e p="Sound2.cs" t="Include" />
@@ -51,6 +57,7 @@
           <e p="MiniGameStartScript.cs" t="Include" />
           <e p="MinigameTutorials.cs" t="Include" />
           <e p="SceneShuffle.cs" t="Include" />
+          <e p="Score.cs" t="Include" />
           <e p="SingletonHelper.cs" t="Include" />
         </e>
       </e>

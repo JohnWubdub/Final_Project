@@ -70,7 +70,7 @@ public class PressInq : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("no 1");
+//				Debug.Log("no 1");
 			}
 
 
@@ -96,7 +96,7 @@ public class PressInq : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("no 2");
+//				Debug.Log("no 2");
 			}
 
 //_________________________________________________________________________________________________
@@ -140,7 +140,7 @@ public class PressInq : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("no daddy");
+//				Debug.Log("no daddy");
 			}
 			
 			if ((left == true && (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.Space))) ||
