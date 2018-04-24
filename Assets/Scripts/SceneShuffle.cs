@@ -28,15 +28,24 @@ public class SceneShuffle : MonoBehaviour
 		{
 			if (timer < 0)
 			{
-				while (num == GameObject.Find("Score").GetComponent<Score>().played[0] ||
-				       num == GameObject.Find("Score").GetComponent<Score>().played[1] ||
-				       num == GameObject.Find("Score").GetComponent<Score>().played[2] ||
-				       num == GameObject.Find("Score").GetComponent<Score>().played[3])
+				while ((num == GameObject.Find("Score").GetComponent<Score>().played[0] ||
+				        num == GameObject.Find("Score").GetComponent<Score>().played[1] ||
+				        num == GameObject.Find("Score").GetComponent<Score>().played[2] ||
+				        num == GameObject.Find("Score").GetComponent<Score>().played[3]) &&
+				       GameObject.Find("Score").GetComponent<Score>().playCount < 4)
 				{
 					num = Random.Range(1, games + 1);
 				}
-				SceneManager.LoadScene(num);
-			}
+
+				if (GameObject.Find("Score").GetComponent<Score>().playCount < 4)
+				{
+					SceneManager.LoadScene(num);
+				}
+				else
+				{
+					SceneManager.LoadScene(6);
+				}
+		}
 			else
 			{
 				timer -= Time.deltaTime;
