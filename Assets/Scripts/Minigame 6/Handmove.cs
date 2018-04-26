@@ -9,7 +9,7 @@ public class Handmove : MonoBehaviour
 	
 	public int pleasure = 0;
 
-	private int win = 200;
+	private int win = 150;
 
 	public GameObject headText;
 
@@ -17,7 +17,7 @@ public class Handmove : MonoBehaviour
 
 	private float moveSpeed = .24f;
 
-	private float maxExtend = 4.09f;
+	private float maxExtend = 2.3f;
 
 	private float maxRetract = 8.74f;
 

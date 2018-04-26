@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3dd3748328f1140b6b2653e6b99f41b2, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3dd3748328f1140b6b2653e6b99f41b2, type: 3}
       propertyPath: m_LocalScale.x
@@ -1510,12 +1510,12 @@ TextMesh:
   m_GameObject: {fileID: 654697190}
   m_Text: 'Time Left: ____'
   m_OffsetZ: 0
-  m_CharacterSize: 0.5
+  m_CharacterSize: 0.05
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 25
+  m_FontSize: 250
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: a99d978022a864750a66a2530e2ce16e, type: 3}
@@ -1563,7 +1563,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 654697190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.12, y: 6.77, z: 0.39}
+  m_LocalPosition: {x: -2.5, y: 6.68, z: 0.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1907,11 +1907,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf09cd702cf239444bf8f09b7dc6ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hiccupSound: {fileID: 0}
+  hiccupSound: {fileID: 8300000, guid: 6453f791a83b79a4abc319d9d3672f86, type: 3}
   backSound: {fileID: 0}
-  winSound: {fileID: 0}
-  failSound: {fileID: 0}
-  beep: {fileID: 0}
+  winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
+  failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
+  beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}
   volume: 0.1
   backvolume: 0.25
   audSource: {fileID: 861486893}
@@ -2676,91 +2676,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb4f6d41b31214788985f698e94d6f07, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1265083100
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1265083103}
-  - component: {fileID: 1265083102}
-  - component: {fileID: 1265083101}
-  m_Layer: 0
-  m_Name: ScoreText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!102 &1265083101
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1265083100}
-  m_Text: 'Score: '
-  m_OffsetZ: 0
-  m_CharacterSize: 0.5
-  m_LineSpacing: 1
-  m_Anchor: 4
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 25
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 12800000, guid: a99d978022a864750a66a2530e2ce16e, type: 3}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4292346111
---- !u!23 &1265083102
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1265083100}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: a99d978022a864750a66a2530e2ce16e, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!4 &1265083103
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1265083100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1299408393
 Prefab:
   m_ObjectHideFlags: 0
@@ -3179,7 +3094,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3dd3748328f1140b6b2653e6b99f41b2, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3dd3748328f1140b6b2653e6b99f41b2, type: 3}
       propertyPath: m_LocalScale.x
@@ -3820,7 +3735,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3dd3748328f1140b6b2653e6b99f41b2, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3dd3748328f1140b6b2653e6b99f41b2, type: 3}
       propertyPath: m_LocalScale.x

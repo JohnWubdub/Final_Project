@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FightKeys : MonoBehaviour //fighting mini game main script
 {
-	
 	private KeyCode[] keyChain = new KeyCode[8];
 	private int count = 0;
 	public GameObject timer;
@@ -43,7 +42,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 		this.GetComponent<TextMesh>().text = textChain;
 	}
 	
-	// 
+
 	void Update ()
 	{
 
@@ -90,12 +89,8 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			timer.GetComponent<Timer2>().subTime = false;
 			this.GetComponent<TextMesh>().text = "You lose!";
 			Global.me.lives -= 1;
-		}
-		
-//		Debug.Log(fightChars[0] + " + " + fightChars[1] + " + " + fightChars[2] + " + " + fightChars[3] + " + " + fightChars[4] + " + " + fightChars[5] + " + ");
-//		Debug.Log("Count = " + count);
-
-		
+    }
+ 
 		
 	}
 
