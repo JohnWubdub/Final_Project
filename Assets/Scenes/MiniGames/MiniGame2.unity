@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1411,13 +1411,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be6358fa92f49947b28d031a88fbc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1Sound: {fileID: 0}
-  p2Sound: {fileID: 0}
-  p3Sound: {fileID: 0}
+  p1Sound: {fileID: 8300000, guid: 7261a3e53022d5b4eb0e2a8b6108ace8, type: 3}
+  p2Sound: {fileID: 8300000, guid: c7f6b2c87d022ab44a91f2c246ece2a9, type: 3}
+  p3Sound: {fileID: 8300000, guid: e305ebe20b44e2c4c9fd322bf9759d77, type: 3}
   backSound: {fileID: 0}
-  winSound: {fileID: 0}
-  failSound: {fileID: 0}
-  beep: {fileID: 0}
+  winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
+  failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
+  beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}
   volume: 0.1
   backvolume: 0.25
   audSource: {fileID: 53200782}

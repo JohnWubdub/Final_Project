@@ -43,7 +43,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 		this.GetComponent<TextMesh>().text = textChain;
 	}
 	
-	// 
+
 	void Update ()
 	{
 
