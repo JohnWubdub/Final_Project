@@ -5,7 +5,7 @@ using UnityEngine;
 public class Timer5 : MonoBehaviour 
 {
 
-	private float timeLeft = 15f;
+	private float timeLeft = 8f;
 	public bool timeUp = false;
 	public bool subTime = true;
 	public GameObject sound; 
@@ -31,7 +31,7 @@ public class Timer5 : MonoBehaviour
 		}
 
 //scoring__________________________________________________________________________
-		
+/*		
 		if (subTime == false && timeLeft >= 3)
 		{
 			Global.me.score1 = 100;
@@ -56,7 +56,7 @@ public class Timer5 : MonoBehaviour
 		{
 			Global.me.score1 = 0;
 		}
-	}
+*/	}
 
 	void timing()
 	{
