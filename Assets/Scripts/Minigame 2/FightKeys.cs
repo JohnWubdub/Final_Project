@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FightKeys : MonoBehaviour //fighting mini game main script
 {
-	
 	private KeyCode[] keyChain = new KeyCode[8];
 	private int count = 0;
 	public GameObject timer;
