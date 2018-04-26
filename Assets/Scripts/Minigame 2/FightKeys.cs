@@ -91,8 +91,8 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			this.GetComponent<TextMesh>().text = "You lose!";
 			Global.me.lives -= 1;
 		}
-		
-		Debug.Log(fightChars[0] + " + " + fightChars[1] + " + " + fightChars[2] + " + " + fightChars[3] + " + " + fightChars[4] + " + " + fightChars[5] + " + ");
+
+		Debug.Log(fightChars[0]);
 		Debug.Log("Count = " + count);
 
 		

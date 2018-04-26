@@ -22,7 +22,7 @@ public class Hiccups : MonoBehaviour
 	
 	void Start ()
 	{
-		hiccupNum = Random.Range(65, 76);
+		hiccupNum = Random.Range(0, 5);
 		Global.me.currentMinigame = 2;
 	}
 	
