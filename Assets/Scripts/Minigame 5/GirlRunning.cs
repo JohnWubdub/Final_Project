@@ -27,10 +27,14 @@ public class GirlRunning : MonoBehaviour
 	private int num1;
 	private int num2;
 	
+	public bool win = false;
+	public bool fail = false;
+	private int soundCount = 0;
+	
 	// Use this for initialization
 	void Start ()
 	{
-		Global.me.currentMinigame = 4;
+		//Global.me.currentMinigame = 4; IMPLIMENT LATER
 		currentGirl = tallGirl;
 		otherGirl = shortGirl;
 		firstKey = KeyCode.A;
@@ -49,7 +53,16 @@ public class GirlRunning : MonoBehaviour
 			{
 				if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
 				{
+					
 					currentGirl.transform.position += new Vector3(.50f, .05f, 0);
+					if (currentGirl == tallGirl)
+					{
+						GetComponent<Sound5>().TallRun();
+					}
+					if (currentGirl == shortGirl)
+					{
+						GetComponent<Sound5>().SmallRun();
+					}
 					run = !run;
 				}
 
@@ -89,32 +102,51 @@ public class GirlRunning : MonoBehaviour
 			{
 				if (tallGirl.transform.position.x > -5 && shortGirl.transform.position.x > -5)
 				{
-					GameObject.Find("Score").GetComponent<Score>().game5 = 25;
+					//GameObject.Find("Score").GetComponent<Score>().game5 = 25;
 				}
 				if (tallGirl.transform.position.x > -1 && shortGirl.transform.position.x > -1)
 				{
-					GameObject.Find("Score").GetComponent<Score>().game5 = 50;
+					//GameObject.Find("Score").GetComponent<Score>().game5 = 50;
 				}
 				if (tallGirl.transform.position.x > 2 && shortGirl.transform.position.x > 2)
 				{
-					GameObject.Find("Score").GetComponent<Score>().game5 = 75;
+					//GameObject.Find("Score").GetComponent<Score>().game5 = 75;
 				}
 				if (tallGirl.transform.position.x > 5 && shortGirl.transform.position.x > 5)
 				{
-					GameObject.Find("Score").GetComponent<Score>().game5 = 100;
+					//GameObject.Find("Score").GetComponent<Score>().game5 = 100;
 				}
+
+				win = true;
 				
-				runText.GetComponent<TextMesh>().text = "You Win!";
-				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 			}
 		}
 		
 		if(tallGirl.transform.position.x <= -5f || shortGirl.transform.position.x <= -5f)
 		{
 			timer.GetComponent<Timer5>().subTime = false;
+			fail = true;
 			runText.GetComponent<TextMesh>().text = "You Lose!";
 			GameObject.Find("Score").GetComponent<Score>().game5 = 0;
 			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
+		
+		if (fail == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound5>().Fail();
+			soundCount += 1;
+		}
+		if (win == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound5>().Win();
+			soundCount += 1;
+		}
+
+		if (win == true)
+		{
+			runText.GetComponent<TextMesh>().text = "You Win!";
+			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
+		}
+		
 	}
 }

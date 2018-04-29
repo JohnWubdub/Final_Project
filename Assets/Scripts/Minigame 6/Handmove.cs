@@ -9,7 +9,7 @@ public class Handmove : MonoBehaviour
 	
 	public int pleasure = 0;
 
-	private int win = 150;
+	private int endNum = 125;
 
 	public GameObject headText;
 
@@ -22,11 +22,17 @@ public class Handmove : MonoBehaviour
 	private float maxRetract = 8.74f;
 
 	public bool end = false;
+	
+	public bool win = false;
+	public bool fail = false;
+	private int soundCount = 0;
+
+	private float tinyTimer = .5f;
 
 
 	private void Start()
 	{
-		Global.me.currentMinigame = 5;
+		//Global.me.currentMinigame = 5; IMPLIMENT LATER
 	}
 
 	void Update () 
@@ -59,19 +65,32 @@ public class Handmove : MonoBehaviour
 			transform.position += new Vector3(moveSpeed, 0f, 0f);
 		}
 
-		if (pleasure >= win && timer.GetComponent<Timer6>().timeUp == false) //winning
+		if (pleasure >= endNum && timer.GetComponent<Timer6>().timeUp == false) //winning
 		{
 			timer.GetComponent<Timer6>().subTime = false;
 			headText.GetComponent<TextMesh>().text = "OH YEAH!";
 			end = true;
+			win = true;
 		}
 
-		if (pleasure < win && timer.GetComponent<Timer6>().timeUp == true) //fail
+		if (pleasure < endNum && timer.GetComponent<Timer6>().timeUp == true) //fail
 		{
 			timer.GetComponent<Timer6>().subTime = false;
 			headText.GetComponent<TextMesh>().text = "FUCK YOU!";
 			Global.me.lives -= 1;
 			end = true;
+			fail = true;
+		}
+		
+		if (fail == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound6>().Fail();
+			soundCount += 1;
+		}
+		if (win == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound6>().Moan();
+			soundCount += 1;
 		}
 		
 	}
@@ -80,6 +99,11 @@ public class Handmove : MonoBehaviour
 	{
 		pleasure += 1;
 		Debug.Log("Fuck me");
-		//changing the hand model to look like they are petting them
+		tinyTimer -= Time.deltaTime;
+		if (tinyTimer <= 0f)
+		{
+			GetComponent<Sound6>().Pet();
+			tinyTimer = .5f;
+		}
 	}
 }

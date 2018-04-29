@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Internal.Execution;
 using UnityEngine;
 
 public class Hiccups : MonoBehaviour
@@ -8,17 +9,19 @@ public class Hiccups : MonoBehaviour
 	public GameObject timer;
 
 	public bool space = false;
+	
 	public bool win = false;
+	public bool fail = false;
 
 	private int hiccupNum;
 
 	private float tinyTimer = .2f;
 
-	private float stanAddingTime = 2f;
-
 	private float addTimer = 2f;
 
 	private float waitTimer = 0;
+
+	private int soundCount = 0;
 	
 	void Start ()
 	{
@@ -31,22 +34,20 @@ public class Hiccups : MonoBehaviour
 	{
 		GetComponent<TextMesh>().text = "Hiccups: " + hiccupNum;
 		
-		if (Input.GetKey(KeyCode.Space) && timer.GetComponent<Timer3>().timeUp == false && win == false)
-		{
-//			addingHiccup();
-		}
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			hiccupNum++;
+			GetComponent<Sound3>().Hiccup();
 		}
 		
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetKey(KeyCode.Space)) 
 		{
 			waitTimer += .1f;
 			if (waitTimer >= 2f)
 			{
 				hiccupNum++;
+				GetComponent<Sound3>().Hiccup();
 			}
 		}
 
@@ -65,6 +66,17 @@ public class Hiccups : MonoBehaviour
 			space = false;
 		}
 		
+		if (fail == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound3>().Fail();
+			soundCount += 1;
+		}
+		if (win == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound3>().Win();
+			soundCount += 1;
+		}
+		
 		if (tinyTimer <= 0 && hiccupNum == 99 && timer.GetComponent<Timer3>().timeUp == false) //win condition
 		{
 			GetComponent<TextMesh>().text = "You win";
@@ -78,23 +90,12 @@ public class Hiccups : MonoBehaviour
 		{
 			timer.GetComponent<Timer3>().subTime = false;
 			GetComponent<TextMesh>().text = "You were killed!";
+			fail = true;
 			Global.me.lives -= 1;
 		}
 
-	}
-
-	void addingHiccup()
-	{
-		if (addTimer <= stanAddingTime)
-		{
-			hiccupNum += 1;
-			addTimer -= Time.deltaTime;
-		}
-
-		if (addTimer <= 0)
-		{
-			addTimer = stanAddingTime;
-		}
 		
+
 	}
+
 }
