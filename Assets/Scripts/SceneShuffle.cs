@@ -10,7 +10,7 @@ public class SceneShuffle : MonoBehaviour
 
 	private int num;
 	private int games = 4;
-	private float timer = 2f;
+	private float timer = 1f;
 	
 	// Use this for initialization
 	void Start ()
@@ -39,7 +39,8 @@ public class SceneShuffle : MonoBehaviour
 
 				if (GameObject.Find("Score").GetComponent<Score>().playCount < 4)
 				{
-					SceneManager.LoadScene(num);
+					Global.me.nextMinigame = num;
+					SceneManager.LoadScene(7);
 				}
 				else
 				{

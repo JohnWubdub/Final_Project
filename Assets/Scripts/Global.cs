@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank for the global variables to be called later
 {
@@ -21,6 +22,12 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 
 	public int currentMinigame = 0;
 
+	public int nextMinigame = -1;
+
+	private float betweenTimer = 2f;
+
+	public bool lose = false;
+	
 	private void Awake()
 	{
 		DontDestroyOnLoad (transform.gameObject);
@@ -43,6 +50,30 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 			score4 = 0;
 			score5 = 0;
 		}
+
+		if (nextMinigame != -1)
+		{
+			betweenTimer -= Time.deltaTime;
+			if (betweenTimer <= 0)
+			{
+				SceneManager.LoadScene(nextMinigame);
+				nextMinigame = -1;
+				betweenTimer = 2f;
+			}
+		}
+
+		if (lose == true)
+		{
+			betweenTimer -= Time.deltaTime;
+			if (betweenTimer <= 0)
+			{
+				SceneManager.LoadScene(0);
+				lose = false;
+				betweenTimer = 2f;
+			}
+		}
+		
+		currentMinigame = SceneManager.GetActiveScene().buildIndex;
 		
 /*		GameObject.Find("ScoreText").GetComponent<TextMesh>().text = "Score: " + (game1 + game2 + game3 + game4 + game5);
 		

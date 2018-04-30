@@ -85,11 +85,11 @@ public class Hiccups : MonoBehaviour
 			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 
-		if (hiccupNum > 99 || timer.GetComponent<Timer3>().timeUp == true || hiccupNum < 99 &&
-		    timer.GetComponent<Timer3>().timeUp == true)  //failure
+		if (hiccupNum > 99 || timer.GetComponent<Timer3>().timeUp == true)  //failure
 		{
 			timer.GetComponent<Timer3>().subTime = false;
 			GetComponent<TextMesh>().text = "You were killed!";
+			Global.me.lose = true;
 			fail = true;
 			Global.me.lives -= 1;
 		}

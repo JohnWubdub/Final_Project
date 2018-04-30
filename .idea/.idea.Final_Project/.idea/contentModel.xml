@@ -51,7 +51,7 @@
           <e p="Minigame 6" t="Include">
             <e p="Handmove.cs" t="Include" />
             <e p="Headmov.cs" t="Include" />
-            <e p="Sound 6.cs" t="Include" />
+            <e p="Sound6.cs" t="Include" />
             <e p="Timer6.cs" t="Include" />
           </e>
           <e p="MiniGameStartScript.cs" t="Include" />

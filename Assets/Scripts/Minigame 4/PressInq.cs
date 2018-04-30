@@ -149,6 +149,7 @@ public class PressInq : MonoBehaviour
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Lose!";
 				i = -1;
 				timer.GetComponent<Timer4>().subTime = false;
+				Global.me.lose = true;
 				fail = true;
 				Global.me.lives -= 1;
 			}

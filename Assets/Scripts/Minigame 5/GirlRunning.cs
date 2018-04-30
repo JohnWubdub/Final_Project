@@ -102,19 +102,19 @@ public class GirlRunning : MonoBehaviour
 			{
 				if (tallGirl.transform.position.x > -5 && shortGirl.transform.position.x > -5)
 				{
-					//GameObject.Find("Score").GetComponent<Score>().game5 = 25;
+					GameObject.Find("Score").GetComponent<Score>().game5 = 25;
 				}
 				if (tallGirl.transform.position.x > -1 && shortGirl.transform.position.x > -1)
 				{
-					//GameObject.Find("Score").GetComponent<Score>().game5 = 50;
+					GameObject.Find("Score").GetComponent<Score>().game5 = 50;
 				}
 				if (tallGirl.transform.position.x > 2 && shortGirl.transform.position.x > 2)
 				{
-					//GameObject.Find("Score").GetComponent<Score>().game5 = 75;
+					GameObject.Find("Score").GetComponent<Score>().game5 = 75;
 				}
 				if (tallGirl.transform.position.x > 5 && shortGirl.transform.position.x > 5)
 				{
-					//GameObject.Find("Score").GetComponent<Score>().game5 = 100;
+					GameObject.Find("Score").GetComponent<Score>().game5 = 100;
 				}
 
 				win = true;
@@ -128,7 +128,8 @@ public class GirlRunning : MonoBehaviour
 			fail = true;
 			runText.GetComponent<TextMesh>().text = "You Lose!";
 			GameObject.Find("Score").GetComponent<Score>().game5 = 0;
-			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
+			Global.me.lose = true;
+//			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 		
 		if (fail == true && soundCount < 2) //sound stuff

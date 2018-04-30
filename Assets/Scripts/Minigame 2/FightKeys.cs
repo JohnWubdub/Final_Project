@@ -53,7 +53,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 
 		if (count < 8 && timer.GetComponent<Timer2>().timeUp == false)
 		{
-			if (Input.GetKeyDown(keyChain[count]) && timer.GetComponent<Timer2>().subTime == true) //if they press da button
+			if (Input.GetKeyUp(keyChain[count]) && timer.GetComponent<Timer2>().subTime == true) //if they press da button
 			{
 				count++;
 				
@@ -97,6 +97,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 				this.GetComponent<TextMesh>().text = "You Lose!";
 				timer.GetComponent<Timer2>().subTime = false;
 				fail = true;
+				Global.me.lose = true;
 				Global.me.score1 = 0;
 				Global.me.lives -= 1;
 			}
@@ -114,18 +115,19 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			fail = true;
 			timer.GetComponent<Timer2>().subTime = false;
 			this.GetComponent<TextMesh>().text = "You lose!";
+			Global.me.lose = true;
 			Global.me.lives -= 1;
 		}
  
 		
 		if (fail == true && soundCount < 2) //sound stuff
 		{
-			GetComponent<Sound3>().Fail();
+			GetComponent<Sound2>().Fail();
 			soundCount += 1;
 		}
 		if (win == true && soundCount < 2) //sound stuff
 		{
-			GetComponent<Sound3>().Win();
+			GetComponent<Sound2>().Win();
 			soundCount += 1;
 		}
 		
