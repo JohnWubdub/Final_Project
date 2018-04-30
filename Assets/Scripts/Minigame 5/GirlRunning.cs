@@ -128,7 +128,8 @@ public class GirlRunning : MonoBehaviour
 			fail = true;
 			runText.GetComponent<TextMesh>().text = "You Lose!";
 			GameObject.Find("Score").GetComponent<Score>().game5 = 0;
-			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
+			Global.me.lose = true;
+//			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 		
 		if (fail == true && soundCount < 2) //sound stuff

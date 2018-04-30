@@ -24,7 +24,9 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 
 	public int nextMinigame = -1;
 
-	private float betweenTimer = 3f;
+	private float betweenTimer = 2f;
+
+	public bool lose = false;
 	
 	private void Awake()
 	{
@@ -56,7 +58,18 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 			{
 				SceneManager.LoadScene(nextMinigame);
 				nextMinigame = -1;
-				betweenTimer = 3f;
+				betweenTimer = 2f;
+			}
+		}
+
+		if (lose == true)
+		{
+			betweenTimer -= Time.deltaTime;
+			if (betweenTimer <= 0)
+			{
+				SceneManager.LoadScene(0);
+				lose = false;
+				betweenTimer = 2f;
 			}
 		}
 		
