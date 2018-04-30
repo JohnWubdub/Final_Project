@@ -11,8 +11,10 @@ public class Sound3 : MonoBehaviour
 	public AudioClip failSound;
 	public AudioClip beep;
 
-	public float volume = .1f;
-	public float backvolume = .25f;
+	private float effectVolume = 5f;
+	private float backvolume = 3f;
+	private float endVolume = 6f;
+	private float beepVolume = 4f;
 
 	//array and audio source
 	private AudioSource[] audSources;
@@ -32,20 +34,20 @@ public class Sound3 : MonoBehaviour
 	//plays sound on the assigned game object
 	public void Hiccup()
 	{
-		audSources[1].PlayOneShot(hiccupSound, volume);
+		audSources[1].PlayOneShot(hiccupSound, effectVolume);
 	}
 	
 	public void Win()
 	{
-		audSources[3].PlayOneShot(winSound, volume);
+		audSources[3].PlayOneShot(winSound, endVolume);
 	}
 	public void Fail()
 	{
-		audSources[4].PlayOneShot(failSound, volume);
+		audSources[4].PlayOneShot(failSound, endVolume);
 	}
 	
 	public void Hurry()
 	{
-		audSources[5].PlayOneShot(beep, volume);
+		audSources[5].PlayOneShot(beep, beepVolume);
 	}
 }

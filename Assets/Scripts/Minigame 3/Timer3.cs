@@ -5,7 +5,7 @@ using UnityEngine;
 public class Timer3 : MonoBehaviour //timer 3
 {
 
-	private float timeLeft = 7f;
+	private float timeLeft = 6f;
 	public bool timeUp = false;
 	public bool subTime = true;
 	public GameObject sound; 
@@ -15,17 +15,17 @@ public class Timer3 : MonoBehaviour //timer 3
 		GetComponent<TextMesh>().text = "Time Left: " + timeLeft.ToString("F");
 		timing();
 		
-		if (timeLeft == 3)
+		if (timeLeft <= 3 && timeLeft >= 2.98)
 		{
 			sound.GetComponent<Sound3>().Hurry();
 		}
 		
-		if (timeLeft == 2)
+		if (timeLeft <= 2 && timeLeft >= 1.98)
 		{
 			sound.GetComponent<Sound3>().Hurry();
 		}
 		
-		if (timeLeft == 1)
+		if (timeLeft <= 1 && timeLeft >= 0.98)
 		{
 			sound.GetComponent<Sound3>().Hurry();
 		}

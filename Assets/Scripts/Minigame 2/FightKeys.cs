@@ -8,13 +8,17 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 	private int count = 0;
 	public GameObject timer;
 	
+	public bool win = false;
+	public bool fail = false;
+	public int soundCount = 0;
+	
 	char[] fightChars = new char[8];
 	
 	// Use this for initialization
 	void Start ()
 	{
 
-		Global.me.currentMinigame = 1;
+		//Global.me.currentMinigame = 1;  PLEASE IMPLIMENT LATER
 
 		char[] textLetters = {'W','A','S','D'};
 		string textChain = null;
@@ -39,7 +43,8 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			keyChain[i] = keyLetters[num];
 		}
 
-		this.GetComponent<TextMesh>().text = textChain;
+		GetComponent<TextMesh>().text = textChain; //displays the text
+		
 	}
 	
 
@@ -48,9 +53,28 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 
 		if (count < 8 && timer.GetComponent<Timer2>().timeUp == false)
 		{
-			if (Input.GetKeyUp(keyChain[count]) && timer.GetComponent<Timer2>().subTime == true)
+			if (Input.GetKeyDown(keyChain[count]) && timer.GetComponent<Timer2>().subTime == true) //if they press da button
 			{
 				count++;
+				
+				//sound effect randomization
+				int rand = Random.Range(1, 4);
+				
+				Debug.Log(rand);
+
+				if (rand == 1)
+				{
+					GetComponent<Sound2>().Punch1(); //calling sound effect
+				}
+				if (rand == 2)
+				{
+					GetComponent<Sound2>().Punch2(); //calling sound effect
+				}
+				if (rand == 3)
+				{
+					GetComponent<Sound2>().Punch3(); //calling sound effect
+				}
+				
 				
 				string textChain = null;
 				
@@ -72,6 +96,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			{
 				this.GetComponent<TextMesh>().text = "You Lose!";
 				timer.GetComponent<Timer2>().subTime = false;
+				fail = true;
 				Global.me.score1 = 0;
 				Global.me.lives -= 1;
 			}
@@ -79,18 +104,30 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 		else //winning
 		{
 			timer.GetComponent<Timer2>().subTime = false;
-			this.GetComponent<TextMesh>().text = "You win!";
+			GetComponent<TextMesh>().text = "You win!";
+			win = true;
 			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 		
 		if (timer.GetComponent<Timer2>().timeUp == true) //if the time runs out
 		{
-//			Debug.Log("Fuck my dick");
+			fail = true;
 			timer.GetComponent<Timer2>().subTime = false;
 			this.GetComponent<TextMesh>().text = "You lose!";
 			Global.me.lives -= 1;
-    }
+		}
  
+		
+		if (fail == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound3>().Fail();
+			soundCount += 1;
+		}
+		if (win == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound3>().Win();
+			soundCount += 1;
+		}
 		
 	}
 

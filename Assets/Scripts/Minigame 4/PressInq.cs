@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class PressInq : MonoBehaviour 
@@ -27,9 +28,13 @@ public class PressInq : MonoBehaviour
 	private int j = 0;
 	private bool spaghetti;
 	
+	public bool win = false;
+	public bool fail = false;
+	private int soundCount = 0;
+	
 	void Start () 
 	{
-		Global.me.currentMinigame = 3;
+		//Global.me.currentMinigame = 3; IMPLIMENT LATER
 		
 		for (int i = 0; i < 10; i++)
 		{
@@ -44,7 +49,7 @@ public class PressInq : MonoBehaviour
 		}
 	}
 	
-	// Update is called once per frame
+
 	void Update ()
 	{
 		if (i < 10 && i >= 0)
@@ -67,12 +72,9 @@ public class PressInq : MonoBehaviour
 				leftMan.GetComponent<Renderer>().enabled = false;
 				advance = true;
 				left = false;
+				GetComponent<Sound4>().Flip();
 			}
-			else
-			{
-//				Debug.Log("no 1");
-			}
-
+			
 
 //_________________________________________________________________________________________________		
 
@@ -93,11 +95,9 @@ public class PressInq : MonoBehaviour
 				rightMan.GetComponent<Renderer>().enabled = false;
 				advance = true;
 				right = false;
+				GetComponent<Sound4>().Flip();
 			}
-			else
-			{
-//				Debug.Log("no 2");
-			}
+			
 
 //_________________________________________________________________________________________________
 
@@ -132,24 +132,24 @@ public class PressInq : MonoBehaviour
 
 			if (friend == true && Input.GetKeyUp(KeyCode.Space)) //checking to see if they are right
 			{
+				GetComponent<Sound4>().Love();
 				leftFriend.GetComponent<Renderer>().enabled = false;
 				rightFriend.GetComponent<Renderer>().enabled = false;
 				advance = true;
 				friend = false;
 				spaghetti = false;
 			}
-			else
-			{
-//				Debug.Log("no daddy");
-			}
+			
 			
 			if ((left == true && (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.Space))) ||
 			     (right == true && (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.Space))) ||
-			      (friend == true && (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))))
+			      (friend == true && (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))) ||
+			    timer.GetComponent<Timer4>().timeUp == true) 
 			{
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Lose!";
 				i = -1;
 				timer.GetComponent<Timer4>().subTime = false;
+				fail = true;
 				Global.me.lives -= 1;
 			}
 
@@ -166,10 +166,22 @@ public class PressInq : MonoBehaviour
 			if (i > -1)
 			{
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Win!";
+				win = true;
 				helpText.GetComponent<Renderer>().enabled = false;
 				timer.GetComponent<Timer4>().subTime = false;
 				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 			}
+		}
+		
+		if (fail == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound4>().Fail();
+			soundCount += 1;
+		}
+		if (win == true && soundCount < 2) //sound stuff
+		{
+			GetComponent<Sound4>().Win();
+			soundCount += 1;
 		}
 	}
 }

@@ -224,11 +224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backSound: {fileID: 0}
-  petSound: {fileID: 0}
-  moanSound: {fileID: 0}
-  winSound: {fileID: 0}
-  failSound: {fileID: 0}
-  beep: {fileID: 0}
+  petSound: {fileID: 8300000, guid: 70eb0d497132c5c48b3192d4dd640295, type: 3}
+  moanSound: {fileID: 8300000, guid: 8b096e83403fb58489ef1c53254e9789, type: 3}
+  winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
+  failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
+  beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}
   volume: 0.1
   backvolume: 0.25
   audSource: {fileID: 279323182}
@@ -248,6 +248,8 @@ MonoBehaviour:
   headText: {fileID: 856378386}
   head: {fileID: 614951466}
   end: 0
+  win: 0
+  fail: 0
 --- !u!1 &279323182
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +896,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 287916351}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.24911943, y: 0.00000022305358, z: -1.8042135e-18}
+  m_ConnectedAnchor: {x: -0.24911943, y: -0.000000015311116, z: -1.8042135e-18}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2
@@ -1007,7 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeUp: 0
   subTime: 1
-  sound: {fileID: 0}
+  sound: {fileID: 230911292}
 --- !u!102 &1689149738
 TextMesh:
   serializedVersion: 3
@@ -1186,7 +1188,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 590283501}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.26024985, y: -0.00000020861626, z: 0}
+  m_ConnectedAnchor: {x: -0.2602501, y: -0.00000020861626, z: 0}
   serializedVersion: 2
   m_Spring: 10
   m_Damper: 0.2

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\jwana\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Pop Team Chaos.-567356024.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jwana\Desktop\Pop Team Chaos" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Defunct" t="Include">
+            <e p="Minigame 1" t="Include">
+              <e p="MenuSelection.cs" t="Include" />
+              <e p="Sound.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
+            </e>
+          </e>
+          <e p="FinalScoring.cs" t="Include" />
+          <e p="Global.cs" t="Include" />
+          <e p="In-between Scripts" t="Include">
+            <e p="Lives.cs" t="Include" />
+            <e p="Scoring.cs" t="Include" />
+            <e p="screenTimer.cs" t="Include" />
+          </e>
+          <e p="Minigame 2" t="Include">
+            <e p="FightKeys.cs" t="Include" />
+            <e p="Sound2.cs" t="Include" />
+            <e p="Timer2.cs" t="Include" />
+          </e>
+          <e p="Minigame 3" t="Include">
+            <e p="Hiccups.cs" t="Include" />
+            <e p="Sound3.cs" t="Include" />
+            <e p="Timer3.cs" t="Include" />
+          </e>
+          <e p="Minigame 4" t="Include">
+            <e p="PressInq.cs" t="Include" />
+            <e p="Sound4.cs" t="Include" />
+            <e p="Timer4.cs" t="Include" />
+          </e>
+          <e p="Minigame 5" t="Include">
+            <e p="GirlRunning.cs" t="Include" />
+            <e p="Sound5.cs" t="Include" />
+            <e p="Timer5.cs" t="Include" />
+          </e>
+          <e p="Minigame 6" t="Include">
+            <e p="Handmove.cs" t="Include" />
+            <e p="Headmov.cs" t="Include" />
+            <e p="Sound6.cs" t="Include" />
+            <e p="Timer6.cs" t="Include" />
+          </e>
+          <e p="MiniGameStartScript.cs" t="Include" />
+          <e p="MinigameTutorials.cs" t="Include" />
+          <e p="SceneShuffle.cs" t="Include" />
+          <e p="Score.cs" t="Include" />
+          <e p="SingletonHelper.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Pop Team Chaos.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>

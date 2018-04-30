@@ -585,6 +585,8 @@ MonoBehaviour:
   leftFriend: {fileID: 197562981}
   timer: {fileID: 1879773024}
   helpText: {fileID: 47246944}
+  win: 0
+  fail: 0
 --- !u!114 &322888354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,14 +598,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8257dd72f35d8d045a6b35910e4e4596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipSound: {fileID: 0}
-  loveSound: {fileID: 0}
+  flipSound: {fileID: 8300000, guid: 1cb2cafcff7f5524c998b96a04569754, type: 3}
+  loveSound: {fileID: 8300000, guid: f9b9188f7e87a2f4aa2bcbfa6ffdb4f6, type: 3}
   backSound: {fileID: 0}
-  winSound: {fileID: 0}
-  failSound: {fileID: 0}
-  beep: {fileID: 0}
-  volume: 0.1
-  backvolume: 0.25
+  winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
+  failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
+  beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}
   audSource: {fileID: 1229586314}
 --- !u!1001 &373382981
 Prefab:
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeUp: 0
   subTime: 1
-  sound: {fileID: 0}
+  sound: {fileID: 322888348}
 --- !u!102 &1879773026
 TextMesh:
   serializedVersion: 3

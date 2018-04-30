@@ -15,17 +15,17 @@ public class Timer2 : MonoBehaviour
 		GetComponent<TextMesh>().text = "Time Left: " + timeLeft.ToString("F");
 		timing();
 
-		if (timeLeft == 3)
+		if (timeLeft <= 3 && timeLeft >= 2.98) //work around to play a sound effect when they are running out of time
 		{
 			sound.GetComponent<Sound2>().Hurry();
 		}
 		
-		if (timeLeft == 2)
+		if (timeLeft <= 2 && timeLeft >= 1.98)
 		{
 			sound.GetComponent<Sound2>().Hurry();
 		}
 		
-		if (timeLeft == 1)
+		if (timeLeft <= 1 && timeLeft >= 0.98)
 		{
 			sound.GetComponent<Sound2>().Hurry();
 		}
