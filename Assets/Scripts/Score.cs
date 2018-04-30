@@ -21,9 +21,12 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		GameObject.Find("ScoreText").GetComponent<TextMesh>().text = "Score: " + (game1 + game2 + game3 + game4 + game5);
-		
+
+		if (Global.me.currentMinigame == 7 || Global.me.currentMinigame == 6)
+		{
+			GameObject.Find("ScoreText").GetComponent<TextMesh>().text = "Score: " + (game1 + game2 + game3 + game4 + game5);
+		}
+
 		Debug.Log("Score1:" + game1);
 		Debug.Log("Score2:" + game2);
 		Debug.Log("Score3:" + game3);

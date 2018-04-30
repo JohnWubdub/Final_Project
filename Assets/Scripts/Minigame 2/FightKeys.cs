@@ -53,7 +53,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 
 		if (count < 8 && timer.GetComponent<Timer2>().timeUp == false)
 		{
-			if (Input.GetKeyDown(keyChain[count]) && timer.GetComponent<Timer2>().subTime == true) //if they press da button
+			if (Input.GetKeyUp(keyChain[count]) && timer.GetComponent<Timer2>().subTime == true) //if they press da button
 			{
 				count++;
 				

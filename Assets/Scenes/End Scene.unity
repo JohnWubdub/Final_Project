@@ -142,9 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a4d0ecfbaa467419f742d2c78ca901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun1: {fileID: 0}
-  gun2: {fileID: 0}
-  gun3: {fileID: 0}
+  gun1: {fileID: 860960195}
+  gun2: {fileID: 683277285}
+  gun3: {fileID: 2004252683}
 --- !u!102 &210272800
 TextMesh:
   serializedVersion: 3
