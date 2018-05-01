@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-//using System.Management.Instrumentation;
 using UnityEngine;
 
 public class MenuSelection : MonoBehaviour //main script for first minigame interaction
