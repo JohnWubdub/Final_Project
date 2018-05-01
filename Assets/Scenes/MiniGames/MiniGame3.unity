@@ -1896,6 +1896,7 @@ MonoBehaviour:
   timer: {fileID: 654697190}
   space: 0
   win: 0
+  fail: 0
 --- !u!114 &783229544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,7 +1909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiccupSound: {fileID: 8300000, guid: 6453f791a83b79a4abc319d9d3672f86, type: 3}
-  backSound: {fileID: 0}
+  backSound: {fileID: 8300000, guid: 55aa4623206bba846a4147145ea8131a, type: 3}
   winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
   failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
   beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}

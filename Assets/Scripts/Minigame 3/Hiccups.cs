@@ -46,7 +46,6 @@ public class Hiccups : MonoBehaviour
 			if (waitTimer >= 2f)
 			{
 				hiccupNum++;
-				GetComponent<Sound3>().Hiccup();
 			}
 		}
 

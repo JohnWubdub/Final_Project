@@ -1247,6 +1247,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 127157549}
+  win: 0
+  fail: 0
+  soundCount: 0
 --- !u!102 &1967209087
 TextMesh:
   serializedVersion: 3
@@ -1329,13 +1332,10 @@ MonoBehaviour:
   p1Sound: {fileID: 8300000, guid: 7261a3e53022d5b4eb0e2a8b6108ace8, type: 3}
   p2Sound: {fileID: 8300000, guid: c7f6b2c87d022ab44a91f2c246ece2a9, type: 3}
   p3Sound: {fileID: 8300000, guid: e305ebe20b44e2c4c9fd322bf9759d77, type: 3}
-  backSound: {fileID: 0}
+  backSound: {fileID: 8300000, guid: 8b9ff3d0ad5b1be4c8d2261f25b58993, type: 3}
   winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
   failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
   beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}
-  effectVolume: 0.1
-  backvolume: 0.25
-  endVolume: 0.2
   audSource: {fileID: 53200782}
 --- !u!1 &2049726541
 GameObject:
