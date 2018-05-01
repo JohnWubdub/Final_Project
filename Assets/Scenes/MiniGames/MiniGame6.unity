@@ -223,14 +223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94001311e6e180a4bade241f5d575a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backSound: {fileID: 0}
+  backSound: {fileID: 8300000, guid: 75e1bbfb7054bbe42baae71db8e31d54, type: 3}
   petSound: {fileID: 8300000, guid: 70eb0d497132c5c48b3192d4dd640295, type: 3}
   moanSound: {fileID: 8300000, guid: 8b096e83403fb58489ef1c53254e9789, type: 3}
   winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
   failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
   beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}
-  volume: 0.1
-  backvolume: 0.25
   audSource: {fileID: 279323182}
 --- !u!114 &230911296
 MonoBehaviour:
