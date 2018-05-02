@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45042056, g: 0.5004262, b: 0.5752195, a: 1}
+  m_IndirectSpecularColor: {r: 0.4504205, g: 0.5004261, b: 0.57521963, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -226,7 +226,6 @@ MonoBehaviour:
   backSound: {fileID: 8300000, guid: 75e1bbfb7054bbe42baae71db8e31d54, type: 3}
   petSound: {fileID: 8300000, guid: 70eb0d497132c5c48b3192d4dd640295, type: 3}
   moanSound: {fileID: 8300000, guid: 8b096e83403fb58489ef1c53254e9789, type: 3}
-  winSound: {fileID: 8300000, guid: 0b55c90c6ef04b74d89304e9cbf68da2, type: 3}
   failSound: {fileID: 8300000, guid: 1bc16b3265a29ca48be19df22f0ae3b8, type: 3}
   beep: {fileID: 8300000, guid: 6b66f133eea5d924c96d6ba983722c4f, type: 3}
   audSource: {fileID: 279323182}
@@ -465,6 +464,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 63083b013658242448035045c12eeca5, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: df41f90d9590741ef88b264a20529a70, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63083b013658242448035045c12eeca5, type: 3}
   m_IsPrefabParent: 0
