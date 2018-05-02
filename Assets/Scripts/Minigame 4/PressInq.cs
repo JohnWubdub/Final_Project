@@ -62,7 +62,7 @@ public class PressInq : MonoBehaviour
 			{
 				leftMan.GetComponent<Renderer>().enabled = true;
 				helpText.GetComponent<TextMesh>().text = "A";
-				helpText.transform.position = leftMan.transform.position + new Vector3(0,2f,0);
+				helpText.transform.position = leftMan.transform.position + new Vector3(0,2.2f,0);
 			}
 
 			if (left == true && Input.GetKeyUp(KeyCode.A)) //checking to see if they are right
@@ -85,7 +85,7 @@ public class PressInq : MonoBehaviour
 			{
 				rightMan.GetComponent<Renderer>().enabled = true;
 				helpText.GetComponent<TextMesh>().text = "D";
-				helpText.transform.position = rightMan.transform.position + new Vector3(0,2f,0);
+				helpText.transform.position = rightMan.transform.position + new Vector3(0,2.2f,0);
 			}
 
 			if (right == true && Input.GetKeyUp(KeyCode.D)) //checking to see if they are right
@@ -115,14 +115,14 @@ public class PressInq : MonoBehaviour
 
 				if (j == 1)
 				{
-					rightFriend.GetComponent<Renderer>().enabled = true;
-					helpText.transform.position = rightFriend.transform.position + new Vector3(0,2f,0);
+					rightFriend.SetActive(true);
+					helpText.transform.position = rightFriend.transform.position + new Vector3(3f,4f,0);
 				}
 
 				if (j == 2)
 				{
-					leftFriend.GetComponent<Renderer>().enabled = true;
-					helpText.transform.position = leftFriend.transform.position + new Vector3(0,2f,0);
+					leftFriend.SetActive(true);
+					helpText.transform.position = leftFriend.transform.position + new Vector3(0,4f,0);
 				}
 				
 				helpText.GetComponent<TextMesh>().text = "Space";
@@ -131,8 +131,8 @@ public class PressInq : MonoBehaviour
 			if (friend == true && Input.GetKeyUp(KeyCode.Space)) //checking to see if they are right
 			{
 				GetComponent<Sound4>().Love();
-				leftFriend.GetComponent<Renderer>().enabled = false;
-				rightFriend.GetComponent<Renderer>().enabled = false;
+				leftFriend.SetActive(false);
+				rightFriend.SetActive(false);
 				advance = true;
 				friend = false;
 				spaghetti = false;

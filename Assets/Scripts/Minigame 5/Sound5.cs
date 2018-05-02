@@ -12,10 +12,11 @@ public class Sound5 : MonoBehaviour //sounds for scene 5
 	public AudioClip failSound;
 	public AudioClip beep;
 
-	private float effectVolume = 4f;
-	private float backvolume = 3f;
-	private float endVolume = 6f;
-	private float beepVolume = 4f;
+	private float effectVolume = 2f;
+	private float smallVolume = 1.5f;
+	private float backvolume = 2f;
+	private float endVolume = 5f;
+	private float beepVolume = 2.5f;
 
 	//array and audio source
 	private AudioSource[] audSources;
@@ -35,7 +36,7 @@ public class Sound5 : MonoBehaviour //sounds for scene 5
 	//plays sound on the assigned game object
 	public void SmallRun()
 	{
-		audSources[1].PlayOneShot(smallRunSound, effectVolume);
+		audSources[1].PlayOneShot(smallRunSound, smallVolume);
 	}
 	
 	public void TallRun()
