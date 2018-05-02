@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4504205, g: 0.5004261, b: 0.57521963, a: 1}
+  m_IndirectSpecularColor: {r: 0.45042098, g: 0.50042677, b: 0.57522035, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -678,7 +678,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 664606910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.66, y: 0.88, z: 2.4}
+  m_LocalPosition: {x: -0.66, y: 0.96, z: 2.4}
   m_LocalScale: {x: 1.3378134, y: 1.3378135, z: 1.3378135}
   m_Children: []
   m_Father: {fileID: 0}
@@ -823,12 +823,12 @@ TextMesh:
   m_GameObject: {fileID: 856378386}
   m_Text: 
   m_OffsetZ: 0
-  m_CharacterSize: 0.5
+  m_CharacterSize: 0.02
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 25
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: a99d978022a864750a66a2530e2ce16e, type: 3}
@@ -1020,12 +1020,12 @@ TextMesh:
   m_GameObject: {fileID: 1689149736}
   m_Text: 'Time Left: _'
   m_OffsetZ: 0
-  m_CharacterSize: 0.5
+  m_CharacterSize: 0.02
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 25
+  m_FontSize: 200
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: a99d978022a864750a66a2530e2ce16e, type: 3}
@@ -1073,7 +1073,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1689149736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.9, y: 5.64, z: 0.39}
+  m_LocalPosition: {x: -8.37, y: 5.3, z: -2.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
