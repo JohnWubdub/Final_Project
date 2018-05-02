@@ -41,11 +41,11 @@ public class GirlRunning : MonoBehaviour
 		secondKey = KeyCode.S;
 		firstLetter = "A";
 		secondletter = "S";
-
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 
 		if (otherGirl.transform.position.x >= -5f)
 		{
@@ -100,6 +100,8 @@ public class GirlRunning : MonoBehaviour
 
 			if (timer.GetComponent<Timer5>().timeUp == true)
 			{
+				win = true;
+				
 				if (tallGirl.transform.position.x > -5 && shortGirl.transform.position.x > -5)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 25;
@@ -117,16 +119,14 @@ public class GirlRunning : MonoBehaviour
 					GameObject.Find("Score").GetComponent<Score>().game5 = 100;
 				}
 
-				win = true;
-				
 			}
 		}
 		
 		if(tallGirl.transform.position.x <= -5f || shortGirl.transform.position.x <= -5f)
 		{
-			timer.GetComponent<Timer5>().subTime = false;
 			fail = true;
-			runText.GetComponent<TextMesh>().text = "You Lose!";
+			timer.GetComponent<Timer5>().subTime = false;
+			runText.GetComponent<TextMesh>().text = "You Failed!";
 			GameObject.Find("Score").GetComponent<Score>().game5 = 0;
 			Global.me.lose = true;
 //			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
@@ -137,8 +137,10 @@ public class GirlRunning : MonoBehaviour
 			GetComponent<Sound5>().Fail();
 			soundCount += 1;
 		}
+		
 		if (win == true && soundCount < 2) //sound stuff
 		{
+			Debug.Log("Help me");
 			GetComponent<Sound5>().Win();
 			soundCount += 1;
 		}

@@ -8,14 +8,13 @@ public class Sound6 : MonoBehaviour
 	public AudioClip backSound;
 	public AudioClip petSound;
 	public AudioClip moanSound;
-	public AudioClip winSound;
 	public AudioClip failSound;
 	public AudioClip beep;
 
 	private float effectVolume = 4f;
-	private float backvolume = 3f;
-	private float endVolume = 6f;
-	private float beepVolume = 4f;
+	private float backvolume = 1f;
+	private float endVolume = 5f;
+	private float beepVolume = 3f;
 
 	//array and audio source
 	private AudioSource[] audSources;

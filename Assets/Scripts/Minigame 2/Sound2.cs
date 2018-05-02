@@ -13,10 +13,10 @@ public class Sound2 : MonoBehaviour
 	public AudioClip failSound;
 	public AudioClip beep;
 
-	private float effectVolume = 5f;
-	private float backvolume = 3f;
-	private float endVolume = 6f;
-	private float beepVolume = 4f;
+	private float effectVolume = 3.5f;
+	private float backvolume = 1.5f;
+	private float endVolume = 4f;
+	private float beepVolume = 3f;
 
 	//array and audio source
 	private AudioSource[] audSources;
