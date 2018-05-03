@@ -67,9 +67,9 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 			betweenTimer -= Time.deltaTime;
 			if (betweenTimer <= 0)
 			{
+				Destroy(GameObject.Find("Score"));
 				SceneManager.LoadScene(0);
-				lose = false;
-				betweenTimer = 2f;
+				Destroy(this.gameObject);
 			}
 		}
 		
