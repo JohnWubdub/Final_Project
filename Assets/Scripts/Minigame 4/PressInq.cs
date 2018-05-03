@@ -60,14 +60,14 @@ public class PressInq : MonoBehaviour
 
 			if (left == true) //activate the renderer
 			{
-				leftMan.GetComponent<Renderer>().enabled = true;
+				leftMan.SetActive(true);
 				helpText.GetComponent<TextMesh>().text = "A";
-				helpText.transform.position = leftMan.transform.position + new Vector3(0,2.2f,0);
+				helpText.transform.position = leftMan.transform.position + new Vector3(0,4.7f,0);
 			}
 
 			if (left == true && Input.GetKeyUp(KeyCode.A)) //checking to see if they are right
 			{
-				leftMan.GetComponent<Renderer>().enabled = false;
+				leftMan.SetActive(false);
 				advance = true;
 				left = false;
 				GetComponent<Sound4>().Flip();
@@ -83,14 +83,14 @@ public class PressInq : MonoBehaviour
 
 			if (right == true) //activate the renderer
 			{
-				rightMan.GetComponent<Renderer>().enabled = true;
+				rightMan.SetActive(true);
 				helpText.GetComponent<TextMesh>().text = "D";
-				helpText.transform.position = rightMan.transform.position + new Vector3(0,2.2f,0);
+				helpText.transform.position = rightMan.transform.position + new Vector3(0,4.7f,0);
 			}
 
 			if (right == true && Input.GetKeyUp(KeyCode.D)) //checking to see if they are right
 			{
-				rightMan.GetComponent<Renderer>().enabled = false;
+				rightMan.SetActive(false);
 				advance = true;
 				right = false;
 				GetComponent<Sound4>().Flip();
@@ -115,14 +115,14 @@ public class PressInq : MonoBehaviour
 
 				if (j == 1)
 				{
-					rightFriend.SetActive(true);
-					helpText.transform.position = rightFriend.transform.position + new Vector3(3f,4f,0);
+					rightFriend.SetActive(true);//right
+					helpText.transform.position = rightFriend.transform.position + new Vector3(5f,6.5f,0);
 				}
 
 				if (j == 2)
 				{
 					leftFriend.SetActive(true);
-					helpText.transform.position = leftFriend.transform.position + new Vector3(0,4f,0);
+					helpText.transform.position = leftFriend.transform.position + new Vector3(0,6f,0);
 				}
 				
 				helpText.GetComponent<TextMesh>().text = "Space";
