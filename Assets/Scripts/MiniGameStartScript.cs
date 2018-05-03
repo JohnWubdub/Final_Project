@@ -58,4 +58,8 @@ public class MiniGameStartScript : MonoBehaviour //Menu script used to select th
 	{
 		SceneManager.LoadScene(5);
 	}
+	public void Tutorial()
+	{
+		GameObject.Find("Tutorial").GetComponent<AudioSource>().Play();
+	}
 }

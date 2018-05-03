@@ -9,7 +9,7 @@ public class SceneShuffle : MonoBehaviour
 	public bool win;
 
 	private int num;
-	private int games = 4;
+	private int games = 5;
 	private float timer = 1f;
 	
 	// Use this for initialization
@@ -31,13 +31,14 @@ public class SceneShuffle : MonoBehaviour
 				while ((num == GameObject.Find("Score").GetComponent<Score>().played[0] ||
 				        num == GameObject.Find("Score").GetComponent<Score>().played[1] ||
 				        num == GameObject.Find("Score").GetComponent<Score>().played[2] ||
-				        num == GameObject.Find("Score").GetComponent<Score>().played[3]) &&
-				       GameObject.Find("Score").GetComponent<Score>().playCount < 4)
+				        num == GameObject.Find("Score").GetComponent<Score>().played[3] ||
+						num == GameObject.Find("Score").GetComponent<Score>().played[4]) &&
+				       GameObject.Find("Score").GetComponent<Score>().playCount < games)
 				{
 					num = Random.Range(1, games + 1);
 				}
 
-				if (GameObject.Find("Score").GetComponent<Score>().playCount < 4)
+				if (GameObject.Find("Score").GetComponent<Score>().playCount < games)
 				{
 					Global.me.nextMinigame = num;
 					SceneManager.LoadScene(7);

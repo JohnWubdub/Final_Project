@@ -71,6 +71,7 @@ public class Handmove : MonoBehaviour
 			headText.GetComponent<TextMesh>().text = "OH YEAH!";
 			end = true;
 			win = true;
+			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 
 		if (pleasure < endNum && timer.GetComponent<Timer6>().timeUp == true) //fail
@@ -80,6 +81,7 @@ public class Handmove : MonoBehaviour
 			Global.me.lives -= 1;
 			end = true;
 			fail = true;
+			Global.me.lose = true;
 		}
 		
 		if (fail == true && soundCount < 2) //sound stuff
