@@ -31,7 +31,8 @@ public class SceneShuffle : MonoBehaviour
 				while ((num == GameObject.Find("Score").GetComponent<Score>().played[0] ||
 				        num == GameObject.Find("Score").GetComponent<Score>().played[1] ||
 				        num == GameObject.Find("Score").GetComponent<Score>().played[2] ||
-				        num == GameObject.Find("Score").GetComponent<Score>().played[3]) &&
+				        num == GameObject.Find("Score").GetComponent<Score>().played[3] ||
+						num == GameObject.Find("Score").GetComponent<Score>().played[4]) &&
 				       GameObject.Find("Score").GetComponent<Score>().playCount < games)
 				{
 					num = Random.Range(1, games + 1);

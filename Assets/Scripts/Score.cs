@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Score : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class Score : MonoBehaviour {
 	public int game4;
 	public int game5;
 
-	public int[] played = {-1,-1,-1,-1,-1,-1};
+	public int[] played = new int[5];
 	public int playCount = 0;
 	
 	// Use this for initialization
