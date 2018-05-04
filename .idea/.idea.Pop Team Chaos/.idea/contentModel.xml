@@ -13,6 +13,11 @@
             </e>
           </e>
         </e>
+        <e p="Pokemon_Shader" t="Include">
+          <e p="Apply_Shader_To_Material.cs" t="Include" />
+          <e p="Pokemon_Shader.shader" t="Include" />
+          <e p="Pokemon_Shader_Transtion.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Defunct" t="Include">
             <e p="Minigame 1" t="Include">
