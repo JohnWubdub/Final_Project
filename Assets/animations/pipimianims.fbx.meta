@@ -1,65 +1,66 @@
 fileFormatVersion: 2
-guid: 0ba696f7b982c483e90c5b031676138c
-timeCreated: 1525281077
+guid: f1e0b14de94644535a99305353bbdcfb
+timeCreated: 1525498529
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: centerjoint
-    100002: head
-    100004: //RootNode
-    100006: left_arm
-    100008: leftankle
-    100010: leftelbow
-    100012: leftknee
-    100014: leftleg
-    100016: leftwrist
-    100018: neck
-    100020: polySurface15
-    100022: polySurface16
-    100024: polySurface28
-    100026: rig
-    100028: rightankle
-    100030: rightarm
-    100032: rightelbow
-    100034: rightknee
-    100036: rightleg
-    100038: rightwrist
-    400000: centerjoint
-    400002: head
-    400004: //RootNode
-    400006: left_arm
-    400008: leftankle
-    400010: leftelbow
-    400012: leftknee
-    400014: leftleg
-    400016: leftwrist
-    400018: neck
-    400020: polySurface15
-    400022: polySurface16
-    400024: polySurface28
-    400026: rig
-    400028: rightankle
-    400030: rightarm
-    400032: rightelbow
-    400034: rightknee
-    400036: rightleg
-    400038: rightwrist
-    2100000: popuko_solo_pasted__blu
-    2100002: popuko_solo_pasted__skin
-    2100004: popuko_solo_pasted__white
-    2100006: popuko_solo_face
-    2100008: popuko_solo_pasted__hairbrown
-    2100010: popuko_solo_pasted__yellow
-    2100012: popuko_solo_pasted__brown
-    2100014: popuko_solo_pasted__black
-    2300000: polySurface16
-    3300000: polySurface16
-    4300000: polySurface16
-    4300002: polySurface28
-    7400000: headtilt
+    100000: head
+    100002: leftarm
+    100004: leftelbow
+    100006: leftfoot
+    100008: lefthand
+    100010: leftknee
+    100012: leftleg
+    100014: lowercenter
+    100016: neck
+    100018: pasted__polySurface30
+    100020: //RootNode
+    100022: pipimimesh
+    100024: rightarm
+    100026: rightelbow
+    100028: rightfoot
+    100030: righthand
+    100032: rightknee
+    100034: rightleg
+    100036: topcenter
+    400000: head
+    400002: leftarm
+    400004: leftelbow
+    400006: leftfoot
+    400008: lefthand
+    400010: leftknee
+    400012: leftleg
+    400014: lowercenter
+    400016: neck
+    400018: pasted__polySurface30
+    400020: //RootNode
+    400022: pipimimesh
+    400024: rightarm
+    400026: rightelbow
+    400028: rightfoot
+    400030: righthand
+    400032: rightknee
+    400034: rightleg
+    400036: topcenter
+    2100000: pasted__skin
+    2100002: pasted__white
+    2100004: pasted__blu
+    2100006: pasted__material
+    2100008: pasted__pipimiface
+    2100010: pasted__brown
+    2100012: pasted__black
+    2100014: pasted__red
+    4300000: pasted__polySurface30
+    7400000: 'idle '
+    7400002: block
+    7400004: fightidle
+    7400006: nicewin
+    7400008: middlefingersalute
+    7400010: blowakiss
+    7400012: run
     9500000: //RootNode
-    13700000: polySurface28
+    13700000: pasted__polySurface30
   externalObjects: {}
   materials:
     importMaterials: 1

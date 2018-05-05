@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 433fb2b6611bc41538037fa429b78201
-timeCreated: 1525310889
+guid: 220b97185afd248efbb139cac895262c
+timeCreated: 1525498525
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -56,6 +56,8 @@ ModelImporter:
     7400006: kick
     7400008: victorystare
     7400010: shameloss
+    7400012: idle
+    7400014: run
     9500000: //RootNode
     13700000: polySurface28
   externalObjects: {}
