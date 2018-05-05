@@ -40,23 +40,28 @@ public class MiniGameStartScript : MonoBehaviour //Menu script used to select th
 
 */ 	public void StartGame1()
 	{
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(8);
+		Global.me.nextMinigame = 1;
 	}
 	public void StartGame2()
 	{
-		SceneManager.LoadScene(2);
+		SceneManager.LoadScene(8);
+		Global.me.nextMinigame = 2;
 	}
 	public void StartGame3()
 	{
-		SceneManager.LoadScene(3);
+		SceneManager.LoadScene(8);
+		Global.me.nextMinigame = 3;
 	}
 	public void StartGame4()
 	{
-		SceneManager.LoadScene(4);
+		SceneManager.LoadScene(8);
+		Global.me.nextMinigame = 4;
 	}
 	public void StartGame5()
 	{
-		SceneManager.LoadScene(5);
+		SceneManager.LoadScene(8);
+		Global.me.nextMinigame = 5;
 	}
 	public void Tutorial()
 	{

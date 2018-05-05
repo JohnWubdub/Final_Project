@@ -18,8 +18,7 @@ public class GirlRunning : MonoBehaviour
 	private float tallTimer;
 	private float shortTimer;
 	
-	private KeyCode[] keyLetters = {KeyCode.A,KeyCode.S,KeyCode.D};
-	private string[] textLetters = {"A","S","D"};
+
 	private KeyCode firstKey;
 	private KeyCode secondKey;
 	private string firstLetter;
@@ -54,7 +53,7 @@ public class GirlRunning : MonoBehaviour
 				if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
 				{
 					
-					currentGirl.transform.position += new Vector3(.35f, .035f, 0);
+					currentGirl.transform.position += new Vector3(.3f, .03f, 0);
 					if (currentGirl == tallGirl)
 					{
 						GetComponent<Sound5>().TallRun();
@@ -86,15 +85,10 @@ public class GirlRunning : MonoBehaviour
 						num2 = Random.Range(0, 3);
 					}
 
-					firstKey = keyLetters[num1];
-					secondKey = keyLetters[num2];
-					firstLetter = textLetters[num1];
-					secondletter = textLetters[num2];
-
 					runText.GetComponent<TextMesh>().text = firstLetter + " + " + secondletter;
 				}
 
-				otherGirl.transform.position -= new Vector3(Time.deltaTime * 2f, Time.deltaTime * .2f, 0);
+				otherGirl.transform.position -= new Vector3(Time.deltaTime * 2.5f, Time.deltaTime * .25f, 0);
 				runText.transform.position = currentGirl.transform.position + new Vector3(0, 2f, 0);
 			}
 

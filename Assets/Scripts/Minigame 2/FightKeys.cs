@@ -14,11 +14,9 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 	
 	char[] fightChars = new char[8];
 	
-	// Use this for initialization
+
 	void Start ()
 	{
-
-		//Global.me.currentMinigame = 1;  PLEASE IMPLIMENT LATER
 
 		char[] textLetters = {'W','A','S','D'};
 		string textChain = null;
@@ -97,9 +95,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 				this.GetComponent<TextMesh>().text = "You Lose!";
 				timer.GetComponent<Timer2>().subTime = false;
 				fail = true;
-				Global.me.lose = true;
 				Global.me.score1 = 0;
-				Global.me.lives -= 1;
 			}
 		}
 		else //winning
@@ -110,13 +106,12 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 		
-		if (timer.GetComponent<Timer2>().timeUp == true) //if the time runs out
+		if (timer.GetComponent<Timer2>().timeUp == true) //if the time runs out Failure
 		{
-			fail = true;
+			
 			timer.GetComponent<Timer2>().subTime = false;
 			this.GetComponent<TextMesh>().text = "You lose!";
-			Global.me.lose = true;
-			Global.me.lives -= 1;
+			fail = true;
 		}
  
 		
@@ -124,6 +119,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 		{
 			GetComponent<Sound2>().Fail();
 			soundCount += 1;
+			Global.me.lose = true;
 		}
 		if (win == true && soundCount < 2) //sound stuff
 		{
