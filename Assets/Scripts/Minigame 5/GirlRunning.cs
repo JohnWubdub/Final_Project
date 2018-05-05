@@ -18,8 +18,8 @@ public class GirlRunning : MonoBehaviour
 	private float tallTimer;
 	private float shortTimer;
 	
-	private KeyCode[] keyLetters = {KeyCode.W, KeyCode.A,KeyCode.S,KeyCode.D};
-	private string[] textLetters = {"W","A","S","D"};
+	private KeyCode[] keyLetters = {KeyCode.A,KeyCode.S,KeyCode.D};
+	private string[] textLetters = {"A","S","D"};
 	private KeyCode firstKey;
 	private KeyCode secondKey;
 	private string firstLetter;
@@ -54,7 +54,7 @@ public class GirlRunning : MonoBehaviour
 				if ((run && Input.GetKeyUp(firstKey)) || (!run && Input.GetKeyUp(secondKey)))
 				{
 					
-					currentGirl.transform.position += new Vector3(.50f, .05f, 0);
+					currentGirl.transform.position += new Vector3(.35f, .035f, 0);
 					if (currentGirl == tallGirl)
 					{
 						GetComponent<Sound5>().TallRun();
@@ -79,11 +79,11 @@ public class GirlRunning : MonoBehaviour
 						otherGirl = shortGirl;
 					}
 
-					num1 = Random.Range(0, 4);
-					num2 = Random.Range(0, 4);
+					num1 = Random.Range(0, 3);
+					num2 = Random.Range(0, 3);
 					while (num1 == num2)
 					{
-						num2 = Random.Range(0, 4);
+						num2 = Random.Range(0, 3);
 					}
 
 					firstKey = keyLetters[num1];
@@ -102,19 +102,19 @@ public class GirlRunning : MonoBehaviour
 			{
 				win = true;
 				
-				if (tallGirl.transform.position.x > -5 && shortGirl.transform.position.x > -5)
+				if (tallGirl.transform.position.x > -4 && shortGirl.transform.position.x > -4)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 25;
 				}
-				if (tallGirl.transform.position.x > -1 && shortGirl.transform.position.x > -1)
+				if (tallGirl.transform.position.x > -3 && shortGirl.transform.position.x > -3)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 50;
 				}
-				if (tallGirl.transform.position.x > 2 && shortGirl.transform.position.x > 2)
+				if (tallGirl.transform.position.x > -2 && shortGirl.transform.position.x > -2)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 75;
 				}
-				if (tallGirl.transform.position.x > 5 && shortGirl.transform.position.x > 5)
+				if (tallGirl.transform.position.x > 0 && shortGirl.transform.position.x > 0)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 100;
 				}

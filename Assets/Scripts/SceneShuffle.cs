@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class SceneShuffle : MonoBehaviour
 {
-
+	private Pokemon_Shader_Transtion transition;
+	
 	public bool win;
 
 	private int num;
@@ -15,6 +16,7 @@ public class SceneShuffle : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		transition = GameObject.FindObjectOfType<Pokemon_Shader_Transtion>();
 		num = SceneManager.GetActiveScene().buildIndex;
 		GameObject.Find("Score").GetComponent<Score>().played[GameObject.Find("Score").GetComponent<Score>().playCount] = num;
 		GameObject.Find("Score").GetComponent<Score>().playCount++;
@@ -40,6 +42,7 @@ public class SceneShuffle : MonoBehaviour
 
 				if (GameObject.Find("Score").GetComponent<Score>().playCount < games)
 				{
+					transition.Can_Transition = true;
 					Global.me.nextMinigame = num;
 					SceneManager.LoadScene(7);
 				}

@@ -32,22 +32,22 @@ public class Timer6 : MonoBehaviour
 		
 //scoring__________________________________________________________________________
 		
-		if (subTime == false && timeLeft >= 3)
+		if (subTime == false && timeLeft >= 2)
 		{
 			GameObject.Find("Score").GetComponent<Score>().game5 = 100;
 		}
 
-		if (subTime == false && timeLeft < 3 && timeLeft > 2)
+		if (subTime == false && timeLeft < 2 && timeLeft > 1.5)
 		{
 			GameObject.Find("Score").GetComponent<Score>().game5 = 75;
 		}
 		
-		if (subTime == false && timeLeft < 2 && timeLeft > 1)
+		if (subTime == false && timeLeft < 1.5 && timeLeft > .5)
 		{
 			GameObject.Find("Score").GetComponent<Score>().game5 = 50;
 		}
 		
-		if (subTime == false && timeLeft < 1 && timeLeft > 0)
+		if (subTime == false && timeLeft < .5 && timeLeft > 0)
 		{
 			GameObject.Find("Score").GetComponent<Score>().game5 = 25;
 		}

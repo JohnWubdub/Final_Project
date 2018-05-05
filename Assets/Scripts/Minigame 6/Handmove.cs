@@ -9,7 +9,7 @@ public class Handmove : MonoBehaviour
 	
 	public int pleasure = 0;
 
-	private int endNum = 125;
+	private int endNum = 105;
 
 	public GameObject headText;
 
