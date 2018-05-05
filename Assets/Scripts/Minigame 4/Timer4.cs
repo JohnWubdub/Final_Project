@@ -5,7 +5,7 @@ using UnityEngine;
 public class Timer4 : MonoBehaviour //timer 4
 {
 
-	private float timeLeft = 10f;
+	private float timeLeft = 8f;
 	public bool timeUp = false;
 	public bool subTime = true;
 	public GameObject sound; 
@@ -33,25 +33,25 @@ public class Timer4 : MonoBehaviour //timer 4
 
 //scoring__________________________________________________________________________
 		
-		if (subTime == false && timeLeft >= 3)
+		if (subTime == false && timeLeft >= 2)
 		{
 			Global.me.score3 = 100;
 			GameObject.Find("Score").GetComponent<Score>().game3 = 100;
 		}
 
-		if (subTime == false && timeLeft < 3 && timeLeft > 2)
+		if (subTime == false && timeLeft < 2 && timeLeft > 1.5)
 		{
 			Global.me.score3 = 75;
 			GameObject.Find("Score").GetComponent<Score>().game3 = 75;
 		}
 		
-		if (subTime == false && timeLeft < 2 && timeLeft > 1)
+		if (subTime == false && timeLeft < 1.5 && timeLeft > .5)
 		{
 			Global.me.score3 = 50;
 			GameObject.Find("Score").GetComponent<Score>().game3 = 50;
 		}
 		
-		if (subTime == false && timeLeft < 1 && timeLeft > 0)
+		if (subTime == false && timeLeft < .5 && timeLeft > 0)
 		{
 			Global.me.score3 = 25;
 			GameObject.Find("Score").GetComponent<Score>().game3 = 25;

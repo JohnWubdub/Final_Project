@@ -15,8 +15,8 @@ public class Headmov : MonoBehaviour
 	
 	void Start () 
 	{
-		xRand = Random.Range(5f, 6f);
-		yRand = Random.Range(5f, 6f);
+		xRand = Random.Range(5.5f, 6.5f);
+		yRand = Random.Range(5.5f, 6.5f);
 	}
 	
 

@@ -310,7 +310,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: a99d978022a864750a66a2530e2ce16e, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4283241131
+    rgba: 4280882251
 --- !u!23 &47246946
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2902,12 +2902,17 @@ Prefab:
     - target: {fileID: 114980147934208430, guid: 944adc06ea809c24c84de6114e52f644,
         type: 2}
       propertyPath: Next_Level
-      value: 
+      value: In-Between
       objectReference: {fileID: 0}
     - target: {fileID: 114980147934208430, guid: 944adc06ea809c24c84de6114e52f644,
         type: 2}
       propertyPath: Point_Of_Transition
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980147934208430, guid: 944adc06ea809c24c84de6114e52f644,
+        type: 2}
+      propertyPath: Time_To_Transition
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 944adc06ea809c24c84de6114e52f644, type: 2}
