@@ -13,7 +13,7 @@ public class SceneShuffle : MonoBehaviour
 	private int games = 5;
 	private float timer = 1f;
 	
-	// Use this for initialization
+
 	void Start ()
 	{
 		transition = GameObject.FindObjectOfType<Pokemon_Shader_Transtion>();
@@ -22,7 +22,7 @@ public class SceneShuffle : MonoBehaviour
 		GameObject.Find("Score").GetComponent<Score>().playCount++;
 	}
 	
-	// Update is called once per frame
+
 	void Update () 
 	{
 
@@ -44,11 +44,13 @@ public class SceneShuffle : MonoBehaviour
 				{
 					transition.Can_Transition = true;
 					Global.me.nextMinigame = num;
-					SceneManager.LoadScene(7);
+					Global.me.currentMinigame = 7;
+					SceneManager.LoadScene(7);//inbetween
 				}
 				else
 				{
-					SceneManager.LoadScene(6);
+					transition.Can_Transition = true;
+					SceneManager.LoadScene(6);//final score
 				}
 		}
 			else

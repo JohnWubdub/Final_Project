@@ -32,6 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/In-Between.unity
     guid: 6020312830c351840a916150f359cf72
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tutorial Scene.unity
     guid: 81afaf0c3a55e492db204e5b40471426

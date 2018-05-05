@@ -24,7 +24,7 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 
 	public int nextMinigame = -1;
 
-	private float betweenTimer = 2f;
+	private float betweenTimer = 2.5f;
 
 	public bool lose = false;
 	
@@ -51,14 +51,14 @@ public class Global : MonoBehaviourSingleton<Global> //acts almost like a bank f
 			score5 = 0;
 		}
 
-		if (nextMinigame != -1)
+		if (currentMinigame == 7)
 		{
 			betweenTimer -= Time.deltaTime;
 			if (betweenTimer <= 0)
 			{
-				SceneManager.LoadScene(nextMinigame);
-				nextMinigame = -1;
-				betweenTimer = 2f;
+				SceneManager.LoadScene(8); //loads tutorial
+				currentMinigame = 0;
+				betweenTimer = 2.5f;
 			}
 		}
 

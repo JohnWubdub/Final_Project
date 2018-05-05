@@ -20,7 +20,7 @@ public class Score : MonoBehaviour {
 		DontDestroyOnLoad (this.gameObject);
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 
 		if (Global.me.currentMinigame == 7 || Global.me.currentMinigame == 6)

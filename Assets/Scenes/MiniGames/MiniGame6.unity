@@ -1012,12 +1012,12 @@ Prefab:
     - target: {fileID: 114980147934208430, guid: 944adc06ea809c24c84de6114e52f644,
         type: 2}
       propertyPath: Next_Level
-      value: In-Between
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114980147934208430, guid: 944adc06ea809c24c84de6114e52f644,
         type: 2}
       propertyPath: Time_To_Transition
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 944adc06ea809c24c84de6114e52f644, type: 2}

@@ -9,13 +9,13 @@ public class Handmove : MonoBehaviour
 	
 	public int pleasure = 0;
 
-	private int endNum = 105;
+	private int endNum = 95;
 
 	public GameObject headText;
 
 	public GameObject head;
 
-	private float moveSpeed = .24f;
+	private float moveSpeed = .4f;
 
 	private float maxExtend = 2.3f;
 
