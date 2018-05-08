@@ -30,9 +30,13 @@ public class PressInq : MonoBehaviour
 	public bool fail = false;
 	private int soundCount = 0;
 	
+	public GameObject girl;
+	Animator anime;
+	
 	void Start () 
 	{
-		//Global.me.currentMinigame = 3; IMPLIMENT LATER
+		
+		anime = girl.GetComponent<Animator>();
 		
 		for (int i = 0; i < 10; i++)
 		{
@@ -71,6 +75,7 @@ public class PressInq : MonoBehaviour
 				advance = true;
 				left = false;
 				GetComponent<Sound4>().Flip();
+				anime.SetTrigger("fuck");
 			}
 			
 
@@ -94,6 +99,7 @@ public class PressInq : MonoBehaviour
 				advance = true;
 				right = false;
 				GetComponent<Sound4>().Flip();
+				anime.SetTrigger("fuck");
 			}
 			
 
@@ -136,6 +142,7 @@ public class PressInq : MonoBehaviour
 				advance = true;
 				friend = false;
 				spaghetti = false;
+				anime.SetTrigger("kiss");
 			}
 			
 			
@@ -162,12 +169,13 @@ public class PressInq : MonoBehaviour
 		else
 		{
 			// Maximum spaghetti initiated. Change with VU
-			if (i > -1)
+			if (i > -1) //win
 			{
 				GameObject.Find("WinText").GetComponent<TextMesh>().text = "You Win!";
 				win = true;
 				helpText.GetComponent<Renderer>().enabled = false;
 				timer.GetComponent<Timer4>().subTime = false;
+				anime.SetTrigger("win");
 				GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 			}
 		}

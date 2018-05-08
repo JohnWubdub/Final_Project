@@ -14,10 +14,17 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 	
 	char[] fightChars = new char[8];
 	
+	public GameObject girl;
+	public GameObject girl2;
+	Animator anime;
+	Animator ihateyou;
 
 	void Start ()
 	{
 
+		anime = girl.GetComponent<Animator>();
+		ihateyou = girl2.GetComponent<Animator>();
+		
 		char[] textLetters = {'W','A','S','D'};
 		string textChain = null;
 		
@@ -63,14 +70,20 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 				if (rand == 1)
 				{
 					GetComponent<Sound2>().Punch1(); //calling sound effect
+					anime.SetTrigger("kick");
+					ihateyou.SetTrigger("block");
 				}
 				if (rand == 2)
 				{
 					GetComponent<Sound2>().Punch2(); //calling sound effect
+					anime.SetTrigger("right");
+					ihateyou.SetTrigger("block");
 				}
 				if (rand == 3)
 				{
 					GetComponent<Sound2>().Punch3(); //calling sound effect
+					anime.SetTrigger("left");
+					ihateyou.SetTrigger("block");
 				}
 				
 				
@@ -95,7 +108,10 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 				this.GetComponent<TextMesh>().text = "You Lose!";
 				timer.GetComponent<Timer2>().subTime = false;
 				fail = true;
+				anime.SetTrigger("lose");
+				ihateyou.SetTrigger("lose");
 				Global.me.score1 = 0;
+				
 			}
 		}
 		else //winning
@@ -103,6 +119,7 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			timer.GetComponent<Timer2>().subTime = false;
 			GetComponent<TextMesh>().text = "You win!";
 			win = true;
+			anime.SetTrigger("win");
 			GameObject.Find("SceneShuffler").GetComponent<SceneShuffle>().win = true;
 		}
 		
@@ -111,6 +128,8 @@ public class FightKeys : MonoBehaviour //fighting mini game main script
 			
 			timer.GetComponent<Timer2>().subTime = false;
 			this.GetComponent<TextMesh>().text = "You lose!";
+			anime.SetTrigger("lose");
+			ihateyou.SetTrigger("lose");
 			fail = true;
 		}
  

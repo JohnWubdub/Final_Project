@@ -33,7 +33,7 @@ public class MinigameTutorials : MonoBehaviour
 			if (Global.me.nextMinigame == 2)
 			{
 				prompt.GetComponent<TextMesh>().text = "99 Hiccups";
-				controls.GetComponent<TextMesh>().text = "Press or Hold SPACE";
+				controls.GetComponent<TextMesh>().text = "Press/Hold SPACE";
 			}
 
 			if (Global.me.nextMinigame == 3)

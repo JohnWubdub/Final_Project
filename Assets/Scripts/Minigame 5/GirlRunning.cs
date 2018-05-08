@@ -96,15 +96,15 @@ public class GirlRunning : MonoBehaviour
 			{
 				win = true;
 				
-				if (tallGirl.transform.position.x > -4 && shortGirl.transform.position.x > -4)
+				if (tallGirl.transform.position.x > -3 && shortGirl.transform.position.x > -3)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 25;
 				}
-				if (tallGirl.transform.position.x > -3 && shortGirl.transform.position.x > -3)
+				if (tallGirl.transform.position.x > -2 && shortGirl.transform.position.x > -2)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 50;
 				}
-				if (tallGirl.transform.position.x > -2 && shortGirl.transform.position.x > -2)
+				if (tallGirl.transform.position.x > -1 && shortGirl.transform.position.x > -1)
 				{
 					GameObject.Find("Score").GetComponent<Score>().game5 = 75;
 				}
@@ -116,7 +116,7 @@ public class GirlRunning : MonoBehaviour
 			}
 		}
 		
-		if(tallGirl.transform.position.x <= -5f || shortGirl.transform.position.x <= -5f)
+		if(tallGirl.transform.position.x <= -4f || shortGirl.transform.position.x <= -4f)
 		{
 			fail = true;
 			timer.GetComponent<Timer5>().subTime = false;
