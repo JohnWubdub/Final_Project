@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Hiccups : MonoBehaviour
 {
-
+	public GameObject girl;
+	Animator anime;
+	//private int hash = Animator.StringToHash("hiccup");
+	
 	public GameObject timer;
 
 	public bool space = false;
@@ -25,26 +29,38 @@ public class Hiccups : MonoBehaviour
 	void Start ()
 	{
 		hiccupNum = Random.Range(0, 5);
+		anime = girl.GetComponent<Animator>();
 		Global.me.currentMinigame = 2;
 	}
 	
 
 	void Update ()
 	{
-		GetComponent<TextMesh>().text = "Hiccups: " + hiccupNum;
+		if (Input.GetKey(KeyCode.Space))
+		{
+			anime.SetBool("trig", true);	
+		}
+		else
+		{
+			anime.SetBool("trig", false);
+		}
 		
+		GetComponent<TextMesh>().text = "Hiccups: " + hiccupNum;
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			hiccupNum++;
+			
 			GetComponent<Sound3>().Hiccup();
 		}
 		
 		if (Input.GetKey(KeyCode.Space)) 
 		{
+			anime.SetTrigger("hiccup");
 			waitTimer += .1f;
-			if (waitTimer >= 2f)
+			if (waitTimer >= 1f)
 			{
+				
 				hiccupNum++;
 			}
 		}
@@ -86,7 +102,8 @@ public class Hiccups : MonoBehaviour
 		if (hiccupNum > 99 || timer.GetComponent<Timer3>().timeUp == true)  //failure
 		{
 			timer.GetComponent<Timer3>().subTime = false;
-			GetComponent<TextMesh>().text = "You were killed!";
+			GetComponent<TextMesh>().text = "You died!";
+			anime.SetTrigger("lose");
 			Global.me.lose = true;
 			fail = true;
 			Global.me.lives -= 1;
